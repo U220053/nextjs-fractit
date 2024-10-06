@@ -106,21 +106,18 @@ const OurMission2 = () => {
     <>
       <div className="col-lg-8 col-xl-7">
         <div className="about_content">
-          <p className="large">
-            Learn how our REIT tokens offer transparency, liquidity, and
-            accessible entry into the global real estate market.
+          <p className="large">Unlock the Value of Your Property Holdings</p>
+          <p>
+            FractIt allows you to leverage your tokenized real estate assets for
+            flexible loans. Access liquidity without selling your property
+            shares.
           </p>
           <p>
-            FractIt REIT is a tokenized real estate investment solution offering
-            fractional ownership in a diverse portfolio of premium properties.
-            Each REIT token represents a weighted share of multiple properties,
-            providing both rental income and capital appreciation.
-          </p>
-          <p>
-            FractIt Advantage -No Need to Sell: Keep your property ownership
-            while accessing capital. -Smart Contracts: Automated, secure
-            transactions without intermediaries. -Flexible Repayment: Choose
-            terms that suit your financial needs.
+            <span style={{ fontWeight: "bold" }}> FractIt Advantage</span> -No
+            Need to Sell: Keep your property ownership while accessing capital.
+            -Smart Contracts: Automated, secure transactions without
+            intermediaries. -Flexible Repayment: Choose terms that suit your
+            financial needs.
           </p>
 
           <ul className="ab_counting">
@@ -152,7 +149,7 @@ const OurMission2 = () => {
             width={400}
             height={400}
           />
-          <PopupVideo />
+          {/* <PopupVideo /> */}
         </div>
       </div>
     </>

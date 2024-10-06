@@ -23,7 +23,9 @@ const Reit = () => {
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
               <div className="main-title text-center">
-                <h2 className="mt0">Our Mission Is To FindHouse</h2>
+                <h2 className="mt0" style={{ fontWeight: "bold" }}>
+                  Introduction to FractIt REIT
+                </h2>
               </div>
             </div>
           </div>
@@ -31,6 +33,16 @@ const Reit = () => {
 
           <div className="row">
             <OurMission1 />
+
+            <div className="row">
+              <div className="col-lg-6 offset-lg-3">
+                <div className="main-title text-center">
+                  <h2 className="mt0" style={{ fontWeight: "bold" }}>
+                    Featured REIT
+                  </h2>
+                </div>
+              </div>
+            </div>
             <div className="col-lg-12">
               <div className="feature_property_slider gutter-x15">
                 <FeaturedProp />
@@ -39,7 +51,12 @@ const Reit = () => {
             <div className="row mt80">
               <div className="col-lg-6 offset-lg-3">
                 <div className="main-title text-center">
-                  <h2>Why Choose FractIt REIT?</h2>
+                  <h2 style={{ fontWeight: "bold" }}>How It Works Section</h2>
+                  <p>
+                    Our REIT tokens are backed by fractional shares in multiple
+                    tokenized properties, ensuring diversification and
+                    stability. Here's how it works:
+                  </p>
                 </div>
               </div>
             </div>
@@ -71,7 +88,7 @@ const Reit = () => {
             <div className="row">
               <div className="col-lg-6 offset-lg-3">
                 <div className="main-title text-center">
-                  <h2>How to Start Investing</h2>
+                  <h2 style={{ fontWeight: "bold" }}>How to Start Investing</h2>
                   <p>Getting started with FractIt REIT is easy:</p>
                 </div>
               </div>
@@ -85,7 +102,9 @@ const Reit = () => {
             <div className="row mt80">
               <div className="col-lg-6 offset-lg-3">
                 <div className="main-title text-center">
-                  <h2>Why Choose FractIt REIT?</h2>
+                  <h2 style={{ fontWeight: "bold" }}>
+                    Why Choose FractIt REIT?
+                  </h2>
                 </div>
               </div>
             </div>

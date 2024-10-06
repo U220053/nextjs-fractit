@@ -2,7 +2,7 @@ module.exports = [
   {
     id: 1,
     img: "/assets/images/property/cliffton.webp",
-    price: "235000",
+    price: "235,000",
     lat: 40.7279707552121,
     long: -74.07152705896405,
     type: "Apartment",
@@ -101,11 +101,17 @@ Prime mountain location with panoramic views
     amenities: "air-conditioning",
     featured: "sale",
     created_at: 1667181268893,
+    loc: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14453.295803379557!2d77.1822411!3d31.0672349!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39057f1de8f920f5%3A0x8c47542413694930!2sCliffton%20Valley!5e1!3m2!1sen!2sin!4v1727859123669!5m2!1sen!2sin",
+    tokensymbol: "Cliffton-INHP1001",
+    tokenprice: "1000 USDC",
+    rentalyeild: "6.38% p.a",
+    capitalappreciation: "11.7% p.a",
+    roi: "91%",
   },
   {
     id: 2,
     img: "/assets/images/property/sparkle.webp",
-    price: "595400",
+    price: "595,400",
     type: "Apartment",
     title: "Sparkle Tower 2 - 1BR | Marina View",
     location: `1Sparkle Tower - Dubai Marina, Dubai, United Arab Emirates`,
@@ -201,11 +207,17 @@ Prime mountain location with panoramic views
     amenities: "barbeque",
     featured: "rent",
     created_at: 1667181256361,
+    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.9291482206136!2d55.12897897560386!3d25.07192977779186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f138006a38193%3A0xdeb132e0f0a5e8bb!2sSparkle%20Towers!5e1!3m2!1sen!2sin!4v1727859185563!5m2!1sen!2sin",
+    tokensymbol: "FSTA",
+    tokenprice: "1 USDC",
+    rentalyeild: "9.8% p.a",
+    capitalappreciation: "7% p.a",
+    roi: "91%",
   },
   {
     id: 3,
     img: "/assets/images/property/jw.webp",
-    price: "830860",
+    price: "830,860",
     type: "Apartment",
     title: "JW Marriott Hotel Marina - 1BR ",
     location: `66 Al Marsa St, Dubai Marina, Dubai, United Arab Emirates`,
@@ -216,15 +228,21 @@ Prime mountain location with panoramic views
     description: [
       {
         title: "Description",
-        text: `This luxury 1-bedroom apartment in JW Marriott Hotel Marina offers high-end finishes and modern conveniences. Enjoy waterfront views in this spacious 3280 sqft unit with access to hotel-style amenities such as a gym, spa, and dining.`,
+        text: `Discover luxury living at the JW Marriott Hotel Marina, Dubai Marina. This high-floor, fully furnished 1-bedroom apartment offers breathtaking full marina views, providing a perfect blend of elegance and modern comfort. With two spacious bathrooms and premium fittings, this 880 sqft apartment is designed for those seeking both style and convenience.`,
       },
       {
         title: "Overview",
-        text: `A premium 1BR apartment in the heart of Dubai Marina with access to all the luxurious amenities that the JW Marriott Hotel offers. This apartment is perfect for those seeking a balance between comfort and extravagance.`,
+        text: `Located in one of Dubai's most prestigious areas, residents enjoy access to a range of high-end amenities, including a shared infinity pool, spa, fully equipped gym, and 24/7 concierge service. Whether for holiday rentals or a long-term investment, this property promises an estimated 11% annual rental yield, 8% capital appreciation, and a projected 95% ROI over five years.`,
       },
       {
         title: "Property Attachments",
-        text: `Features gym facilities, multiple swimming pools, and valet parking, providing an experience akin to living in a 5-star hotel.`,
+        text: `Key Highlights:
+Prime location with full marina views
+Fully furnished, luxury apartment
+Walking distance to shopping, dining, and entertainment
+High rental yields and strong capital growth
+Access to premium amenities: infinity pool, spa, gym, and 24/7 security
+`,
       },
     ],
     itemDetails: [
@@ -286,11 +304,17 @@ Prime mountain location with panoramic views
     amenities: "gym",
     featured: "sale",
     created_at: 1667181247152,
+    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.7639942027336!2d55.135551583100884!3d25.07722282051738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4341e0e5086d%3A0x19cb16acf1324515!2sJW%20Marriott%20Hotel%20Marina!5e1!3m2!1sen!2sin!4v1727859217940!5m2!1sen!2sin",
+    tokensymbol: "FJWHM",
+    tokenprice: "1 USDC",
+    rentalyeild: "11% p.a",
+    capitalappreciation: "8% p.a",
+    roi: "95%",
   },
   {
     id: 4,
     img: "/assets/images/property/fountain.webp",
-    price: "1362398",
+    price: "1,362,398",
     type: "Apartment",
     title: "Fountain Views Tower 2 - 2BR",
     location: `The Address Residence Fountain Views 2, Downtown Dubai, Dubai, United Arab Emirates`,
@@ -300,15 +324,21 @@ Prime mountain location with panoramic views
     description: [
       {
         title: "Description",
-        text: `Luxury and modern design come together in this 2BR apartment at Fountain Views Tower 2, Downtown Dubai. Overlooking the famous Burj Khalifa and fountains, this apartment offers 1453 sqft of pure elegance with state-of-the-art facilities.`,
+        text: `Experience luxury living in the heart of Downtown Dubai with this fully furnished 2-bedroom apartment in The Address Residence Fountain Views 2. Offering a stunning view of the iconic Burj Khalifa, this 1,453 sqft residence is perfect for investors seeking premium holiday homes.`,
       },
       {
         title: "Overview",
-        text: `This 2-bedroom apartment at Fountain Views Tower 2 offers not only luxurious living spaces but also unparalleled views of the Dubai Fountain and Burj Khalifa, ensuring that you're at the heart of Dubai's vibrant lifestyle.`,
+        text: `This elegant apartment features an open-plan kitchen, spacious living areas, and three modern bathrooms, all designed for comfort and style. Residents can enjoy high-end amenities like a balcony, central A/C, shared pool, walk-in closet, and 24/7 security. With a projected rental yield of 7% and an estimated 80% ROI over 5 years, this property promises both luxury and a solid return on investment.`,
       },
       {
         title: "Property Attachments",
-        text: `The building provides high-class facilities like a pool, gym, concierge, and covered parking, perfect for both families and professionals.`,
+        text: `Key Features:
+Full Burj Khalifa view
+Fully furnished with high-quality finishes
+Prime location in Downtown Dubai, close to shopping malls and metro
+Top-tier amenities including concierge services, public parking, and a shopping mall
+Strong rental and capital appreciation potential
+`,
       },
     ],
     itemDetails: [
@@ -343,12 +373,12 @@ Prime mountain location with panoramic views
     posterName: "Fractible AFV7001",
     postedYear: "1 year ago",
     imgList: [
-      "/assets/images/property/2.jpg",
-      "/assets/images/property/3.jpg",
-      "/assets/images/property/4.jpg",
-      "/assets/images/property/5.jpg",
-      "/assets/images/property/6.jpg",
-      "/assets/images/property/7.jpg",
+      "/assets/images/property/fountain/fo1.webp",
+      "/assets/images/property/fountain/fo2.jpg",
+      "/assets/images/property/fountain/fo3.webp",
+      "/assets/images/property/fountain/fo4.webp",
+      "/assets/images/property/fountain/fo5.webp",
+      "/assets/images/property/fountain/fo6.webp",
     ],
     imgList2: [
       "/assets/images/property/ls2.jpg",
@@ -360,11 +390,17 @@ Prime mountain location with panoramic views
     built: "2014",
     featured: "rent",
     created_at: 1667181237171,
+    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.7639942027336!2d55.135551583100884!3d25.07722282051738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4341e0e5086d%3A0x19cb16acf1324515!2sJW%20Marriott%20Hotel%20Marina!5e1!3m2!1sen!2sin!4v1727859217940!5m2!1sen!2sin",
+    tokensymbol: "FARFV",
+    tokenprice: "1 USDC",
+    rentalyeild: "7% p.a",
+    capitalappreciation: "9% p.a",
+    roi: "80%",
   },
   {
     id: 5,
     img: "/assets/images/property/vancouver.webp",
-    price: "645105",
+    price: "645,105",
     type: "Apartment",
     title: "Vancouver House - 1BR",
     lat: 39.62158564223682,
@@ -374,15 +410,23 @@ Prime mountain location with panoramic views
     description: [
       {
         title: "Description",
-        text: `Vancouver House redefines urban living with this modern 1BR apartment in the heart of Downtown Vancouver. This 590 sqft apartment boasts cutting-edge architecture and design, providing the perfect blend of luxury and functionality.`,
+        text: `This 1-bedroom apartment at Vancouver House offers an exceptional opportunity for investors and residents alike. Located on the higher floor, this fully furnished apartment features breathtaking views of False Creek and Yaletown, boasting one of the best floorplans in the building, this home combines luxury with functionality.
+`,
       },
       {
         title: "Overview",
-        text: `This modern 1-bedroom apartment offers luxury living in one of Vancouver's most iconic buildings, Vancouver House. Residents enjoy unparalleled amenities such as concierge services, a fitness center, and proximity to world-class shopping and dining.`,
+        text: `Designed by renowned architect Bjarke Ingels and developed by award-winning Westbank, Vancouver House is a landmark in the heart of Downtown Vancouver. The unit includes high-end finishes like a Boffi Chef’s Kitchen, Miele appliances, and stunning oak hardwood floors. The building also offers prestigious amenities, including a 24-hour concierge, swimming pool, a state-of-the-art fitness center, BMW fleet, and a golf simulator.
+`,
       },
       {
         title: "Property Attachments",
-        text: `Amenities include a swimming pool, fitness center, and a 24-hour concierge. This high-end apartment is ideal for professionals seeking convenience and style.`,
+        text: `Key Features:
+Full views of False Creek & Yaletown
+Spacious living area with a 110 sqft patio
+Fully furnished with luxury finishes
+High-end Boffi Chef’s Kitchen with Miele appliances
+Award-winning architecture and design
+`,
       },
     ],
     itemDetails: [
@@ -439,6 +483,11 @@ Prime mountain location with panoramic views
     built: "2020",
     featured: "rent",
     created_at: 1667181227087,
+    tokensymbol: "FVH",
+    tokenprice: "1 USDC",
+    rentalyeild: "6% p.a",
+    capitalappreciation: "11% p.a",
+    roi: "85%",
   },
   {
     id: 6,

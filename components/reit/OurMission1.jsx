@@ -1,6 +1,5 @@
 import PopupVideo from "../../components/common/PopupVideo";
 import Image from "next/image";
-
 const OurMission1 = () => {
   const missionContent = [
     {
@@ -73,12 +72,13 @@ const OurMission1 = () => {
             className="img-fluid w100 cover"
             src="/assets/images/about/1.jpg"
             alt="1.jpg"
-            width={400}
-            height={400}
+            width={200}
+            height={200}
           />
-          <PopupVideo />
+          {/* <PopupVideo /> */}
         </div>
       </div>
+      <div style={{ marginBottom: "50px" }}></div>
     </>
   );
 };

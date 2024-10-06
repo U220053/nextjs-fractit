@@ -90,7 +90,9 @@ const Landing = () => {
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
               <div className="main-title text-center">
-                <h2 className="mt0">Our Mission Is To FindHouse</h2>
+                <h2 className="mt0" style={{ fontWeight: "bold" }}>
+                  Introduction
+                </h2>
               </div>
             </div>
           </div>
@@ -103,13 +105,13 @@ const Landing = () => {
                 <FeaturedProp />
               </div> */}
             </div>
-            <div className="row mt80">
+            {/* <div className="row mt80">
               <div className="col-lg-6 offset-lg-3">
                 <div className="main-title text-center">
                   <h2>Easy Steps to Unlock Liquidity</h2>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* End .row */}
           </div>
           {/* End .row */}
@@ -117,13 +119,15 @@ const Landing = () => {
 
         <section id="property-city" className="property-city pb30">
           <div className="container">
-            {/* <div className="row">
+            <div className="row">
               <div className="col-lg-6 offset-lg-3">
                 <div className="main-title text-center">
-                  <h2>Easy Steps to Unlock Liquidity</h2>
+                  <h2 style={{ fontWeight: "bold" }}>
+                    Easy Steps to Unlock Liquidity
+                  </h2>
                 </div>
               </div>
-            </div> */}
+            </div>
             {/* End .row */}
 
             {/* <div className="row">
@@ -145,8 +149,7 @@ const Landing = () => {
                 <div className="row">
                   <div className="col-lg-6 offset-lg-3">
                     <div className="main-title text-center mb30">
-                      <h2>What are you looking for?</h2>
-                      <p>We provide full service at every step.</p>
+                      <h2>Easy Steps to Unlock Liquidity:</h2>
                     </div>
                   </div>
                 </div>
@@ -168,17 +171,19 @@ const Landing = () => {
                 <FeaturedProp />
               </div> */}
                 </div>
-                <div className="row mt80">
+                <div className="row ">
                   <div className="col-lg-6 offset-lg-3">
                     <div className="main-title text-center">
-                      <h2>Get Started</h2>
-                      <p>Ready to Unlock Liquidity?</p>
-                      <p>
-                        Start leveraging your tokenized real estate today. [Sign
-                        Up or Log In] to access our lending platform.
+                      <h2 style={{ fontWeight: "bold" }}>Get Started</h2>
+                      <p style={{ marginBottom: "20px" }}>
+                        Ready to Unlock Liquidity?
                       </p>
                     </div>
                   </div>
+                  <p className="w-full">
+                    Start leveraging your tokenized real estate today. [Sign Up
+                    or Log In] to access our lending platform.
+                  </p>
                 </div>
                 {/* End .row */}
               </div>

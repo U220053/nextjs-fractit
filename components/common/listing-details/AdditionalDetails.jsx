@@ -1,40 +1,36 @@
-const AdditionalDetails = () => {
+import properties from "@/data/properties";
+
+const AdditionalDetails = ({ id }) => {
+  const property = properties?.find((item) => item.id == id) || properties[0];
+
   return (
     <>
       <div className="col-md-6 col-lg-6">
         <ul className="list-inline-item">
           <li>
             <p>
-              Deposit : <span>20%</span>
+              Token Symbol : <span>{property?.tokensymbol}</span>
             </p>
           </li>
           <li>
             <p>
-              Pool Size : <span>300 Sqft</span>
+              Token Price : <span>{property?.tokenprice}</span>
             </p>
           </li>
           <li>
             <p>
-              Additional Rooms : <span>Guest Bath</span>
-            </p>
-          </li>
-        </ul>
-      </div>
-      <div className="col-md-6 col-lg-6">
-        <ul className="list-inline-item">
-          <li>
-            <p>
-              Last remodel year : <span>1987</span>
+              Rental Yield (Estm.) : <span>{property?.rentalyeild}</span>
             </p>
           </li>
           <li>
             <p>
-              Amenities : <span>Clubhouse</span>
+              Capital Appriciation(Estm.) :{" "}
+              <span>{property?.capitalappreciation}</span>
             </p>
           </li>
           <li>
             <p>
-              Equipment : <span>Grill - Gas</span>
+              Estimated ROI (5 years) : <span>{property?.roi}</span>
             </p>
           </li>
         </ul>

@@ -5,19 +5,18 @@ import Image from "next/image";
 const ErrorPageContent = () => {
   return (
     <div className="error_page footer_apps_widget">
-      <Image
+      {/* <Image
         width={266}
         height={200}
         className="img-fluid img-thumb contain"
         src="/assets/images/resource/error.png"
         alt="error.png"
-      />
+      /> */}
       <div className="erro_code">
-        <h1>Ohh! Page Not Found</h1>
+        <h1>COMING SOON</h1>
       </div>
-      <p>We can’t seem to find the page you’re looking for</p>
+      {/* <p>We can’t seem to find the page you’re looking for</p> */}
 
-      <Form />
       {/* End form */}
 
       <Link href="/" className="btn btn_error btn-thm">

@@ -21,7 +21,7 @@ export default function ListingOne({ property }) {
                   <h2>${property?.price}</h2>
                 </div>
 
-                <div className="spss style2 mt20 text-end tal-400">
+                {/* <div className="spss style2 mt20 text-end tal-400">
                   <ul className="mb0">
                     <li className="list-inline-item">
                       <a href="#">
@@ -44,7 +44,7 @@ export default function ListingOne({ property }) {
                       </a>
                     </li>
                   </ul>
-                </div>
+                </div> */}
                 {/* End activity and social sharing */}
               </div>
             </div>

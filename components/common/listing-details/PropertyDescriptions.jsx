@@ -1,65 +1,59 @@
-'use client'
+"use client";
 
 import { useState } from "react";
+import properties from "@/data/properties";
 
-const PropertyDescriptions = () => {
+const PropertyDescriptions = ({ id }) => {
   const [click, setClick] = useState(true);
   const handleClick = () => setClick(!click);
 
+  // Safely check if property and description exist and have enough elements
+
+  const property = properties?.find((item) => item.id == id) || properties[0];
+  const hasDescription = property?.description?.length >= 3;
   return (
     <>
-      <p className="mb25">
-        Evans Tower very high demand corner junior one bedroom plus a large
-        balcony boasting full open NYC views. You need to see the views to
-        believe them. Mint condition with new hardwood floors. Lots of closets
-        plus washer and dryer.
-      </p>
-      <p className={click ? "gpara second_para white_goverlay mt10 mb10" : ""}>
-        Fully furnished. Elegantly appointed condominium unit situated on
-        premier location. PS6. The wide entry hall leads to a large living room
-        with dining area. This expansive 2 bedroom and 2 renovated marble
-        bathroom apartment has great windows. Despite the interior views, the
-        apartments Southern and Eastern exposures allow for lovely natural light
-        to fill every room. The master suite is surrounded by handcrafted
-        milkwork and features incredible walk-in closet and storage space.
-      </p>
-      <div className="collapse" id="collapseExample">
-        <div className="card card-body">
-          <p className="mt10 mb10">
-            Fully furnished. Elegantly appointed condominium unit situated on
-            premier location. PS6. The wide entry hall leads to a large living
-            room with dining area. This expansive 2 bedroom and 2 renovated
-            marble bathroom apartment has great windows. Despite the interior
-            views, the apartments Southern and Eastern exposures allow for
-            lovely natural light to fill every room. The master suite is
-            surrounded by handcrafted milkwork and features incredible walk-in
-            closet and storage space.
+      {hasDescription ? (
+        <>
+          <p className="mb25">
+            {property.description[0]?.text || "No description available"}
           </p>
-          <p className="mt10 mb10">
-            Fully furnished. Elegantly appointed condominium unit situated on
-            premier location. PS6. The wide entry hall leads to a large living
-            room with dining area. This expansive 2 bedroom and 2 renovated
-            marble bathroom apartment has great windows. Despite the interior
-            views, the apartments Southern and Eastern exposures allow for
-            lovely natural light to fill every room. The master suite is
-            surrounded by handcrafted milkwork and features incredible walk-in
-            closet and storage space.
+          <p
+            className={
+              click ? "gpara second_para white_goverlay mt10 mb10" : ""
+            }
+          >
+            {property.description[1]?.text ||
+              "No additional description available"}
           </p>
-        </div>
-      </div>
-      <p className="overlay_close">
-        <a
-          className="text-thm fz14"
-          data-bs-toggle="collapse"
-          href="#collapseExample"
-          role="button"
-          aria-expanded="false"
-          aria-controls="collapseExample"
-          onClick={handleClick}
-        >
-          Show More <span className="flaticon-download-1 fz12"></span>
-        </a>
-      </p>
+          <div className="collapse" id="collapseExample">
+            <div className="card card-body">
+              <p className="mt10 mb10">
+                {property.description[2]?.text || "No description available"}
+              </p>
+              {/* Check if a 4th description exists */}
+              {property.description[3] && (
+                <p className="mt10 mb10">{property.description[3]?.text}</p>
+              )}
+            </div>
+          </div>
+          <p className="overlay_close">
+            <a
+              className="text-thm fz14"
+              data-bs-toggle="collapse"
+              href="#collapseExample"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+              onClick={handleClick}
+            >
+              Show More <span className="flaticon-download-1 fz12"></span>
+            </a>
+          </p>
+        </>
+      ) : (
+        <p>No description data available</p>
+      )}
     </>
   );
 };
