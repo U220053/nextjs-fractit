@@ -70,7 +70,7 @@ export default Landing;
 import React from "react";
 // import MetaComponent from "@/components/common/MetaComponent";
 import Header from "@/components/common/header/DefaultHeader";
-import BreadcrumbBanner3 from "./BreadcrumbBanner3";
+import BreadCrumbBanner3 from "./BreadCrumbBanner3";
 import OurMission2 from "./OurMission2";
 import LookingItem1 from "./LookingItem1";
 
@@ -84,7 +84,7 @@ const Landing = () => {
   return (
     <>
       <Header />
-      <BreadcrumbBanner3 />
+      <BreadCrumbBanner3 />
       <section className="about-section">
         <div className="container">
           <div className="row">
