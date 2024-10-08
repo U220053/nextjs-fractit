@@ -1,4 +1,3 @@
-
 import "photoswipe/dist/photoswipe.css";
 import CopyrightFooter from "@/components/common/footer/CopyrightFooter";
 import Footer from "@/components/common/footer/Footer";
@@ -10,11 +9,13 @@ import DetailsContent from "@/components/listing-details-v1/DetailsContent";
 import Sidebar from "@/components/listing-details-v1/Sidebar";
 import ListingTwo from "@/components/listing-single/ListingTwo";
 
-const ListingDynamicDetailsV2 = ({params}) => {
-
+export async function generateStaticParams() {
+  const ids = properties.map((property) => ({ id: property.id.toString() }));
+  return ids;
+}
+const ListingDynamicDetailsV2 = ({ params }) => {
   const id = params.id;
-  const property = properties?.find((item) => item.id == id) || properties[0]
-
+  const property = properties?.find((item) => item.id == id) || properties[0];
 
   return (
     <>
@@ -30,7 +31,6 @@ const ListingDynamicDetailsV2 = ({params}) => {
       {/* <!-- Listing Single Property --> */}
 
       <ListingTwo property={property} />
-      
 
       {/* <!-- Agent Single Grid View --> */}
       <section className="our-agent-single bgc-f7 pb30-991">

@@ -7,26 +7,24 @@ import Footer from "@/components/common/footer/Footer";
 import Header from "@/components/common/header/DefaultHeader";
 import MobileMenu from "@/components/common/header/MobileMenu";
 import PopupSignInUp from "@/components/common/PopupSignInUp";
-
 import Image from "next/image";
 
-const AgentDetailsDynamic = ({params}) => {
+// Generate static params for agent details
+export async function generateStaticParams() {
+  const ids = agents.map((agent) => ({ id: agent.id.toString() }));
+  return ids;
+}
 
+const AgentDetailsDynamic = ({ params }) => {
   const id = params.id;
-  const agent=agents.find((item) => item.id == id) || agents[0]
+  const agent = agents.find((item) => item.id == id) || agents[0];
 
   return (
     <>
-      {/* <!-- Main Header Nav --> */}
       <Header />
-
-      {/* <!--  Mobile Menu --> */}
       <MobileMenu />
-
-      {/* <!-- Modal --> */}
       <PopupSignInUp />
 
-      {/* <!-- Agent Single Grid View --> */}
       <section className="our-agent-single bgc-f7 pb30-991 mt85 md-mt0">
         <div className="container">
           <div className="row">
@@ -35,7 +33,6 @@ const AgentDetailsDynamic = ({params}) => {
                 <div className="col-lg-12">
                   <BreadCrumb2 />
                 </div>
-                {/* End .col-12 */}
 
                 <div className="col-lg-12">
                   <div className="feat_property list style2 agent align-items-center">
@@ -56,7 +53,6 @@ const AgentDetailsDynamic = ({params}) => {
                         </ul>
                       </div>
                     </div>
-                    {/* End .thumb */}
 
                     <div className="details">
                       <div className="tc_content">
@@ -77,7 +73,6 @@ const AgentDetailsDynamic = ({params}) => {
                           </li>
                         </ul>
                       </div>
-                      {/* End .tc_content */}
 
                       <div className="fp_footer">
                         <ul className="fp_meta float-start mb0">
@@ -94,31 +89,23 @@ const AgentDetailsDynamic = ({params}) => {
                           ))}
                         </ul>
                       </div>
-                      {/* End .fp_footer */}
                     </div>
                   </div>
-                  {/* End .feat_property */}
 
                   <div className="shop_single_tab_content style2 mt30">
                     <TabDetailsContent />
                   </div>
                 </div>
-                {/* End .col-12 */}
               </div>
             </div>
-            {/* End .col-md-12 col-lg-8 content left side */}
 
             <div className="col-lg-4 col-xl-4">
               <SidebarListings />
             </div>
-            {/* End .col-lg-4 col-xl-4 content left side */}
           </div>
-          {/* End .row */}
         </div>
-        {/* End .container */}
       </section>
 
-      {/* <!-- Our Footer --> */}
       <section className="footer_one">
         <div className="container">
           <div className="row">
@@ -127,7 +114,6 @@ const AgentDetailsDynamic = ({params}) => {
         </div>
       </section>
 
-      {/* <!-- Our Footer Bottom Area --> */}
       <section className="footer_middle_area pt40 pb40">
         <div className="container">
           <CopyrightFooter />

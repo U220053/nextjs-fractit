@@ -17,20 +17,19 @@ import blogs from "@/data/blogs";
 import Image from "next/image";
 
 export const metadata = {
-  title: 'Blog Details || FindHouse - Real Estate React Template',
-  description:
-    'FindHouse - Real Estate React Template',
+  title: "Blog Details || FindHouse - Real Estate React Template",
+  description: "FindHouse - Real Estate React Template",
+};
+export async function generateStaticParams() {
+  const ids = blogs.map((blog) => ({ id: blog.id.toString() }));
+  return ids;
 }
-
-const BlogDetailsDynamic = ({params}) => {
-  
+const BlogDetailsDynamic = ({ params }) => {
   const id = params.id;
-  const blog = blogs.find((item) => item.id == id) ||  blogs[0]
-
+  const blog = blogs.find((item) => item.id == id) || blogs[0];
 
   return (
     <>
-
       {/* <!-- Main Header Nav --> */}
       <Header />
 
@@ -265,3 +264,4 @@ const BlogDetailsDynamic = ({params}) => {
 export default dynamic(() => Promise.resolve(BlogDetailsDynamic), {
   ssr: false,
 });
+// export default BlogDetailsDynamic;
