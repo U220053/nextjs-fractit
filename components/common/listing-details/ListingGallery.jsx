@@ -14,8 +14,8 @@ const ListingGallery = () => {
             <div className="row mb30">
               <div className="col-lg-7 col-xl-8">
                 <div className="single_property_title mt30-767">
-                  <h2>{singleItem.title}</h2>
-                  <p>{singleItem.location}</p>
+                  <h2 style={{ fontWeight: "bold" }}>{singleItem.title}</h2>
+                  <p style={{ fontWeight: "bold" }}>{singleItem.location}</p>
                 </div>
               </div>
               <div className="col-lg-5 col-xl-4">

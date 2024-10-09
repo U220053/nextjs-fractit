@@ -3,8 +3,10 @@ import HomeMain from "./(homes)/home-1/page";
 import GridV6 from "@/components/listing-grid/grid-v6";
 
 export const metadata = {
-  title: "Home-1 || FindHouse - Real Estate React Template",
-  description: "FindHouse - Real Estate React Template",
+  title:
+    "Explore Tokenized Real Estate Properties: Your Gateway to Fractional Ownership",
+  description:
+    "Explore Tokenized Real Estate Properties: Your Gateway to Fractional Ownership",
 };
 
 export default function Home() {

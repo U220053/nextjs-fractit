@@ -11,8 +11,10 @@ export default function ListingOne({ property }) {
           <div className="row mb30">
             <div className="col-lg-7 col-xl-8">
               <div className="single_property_title mt30-767">
-                <h2>{property?.title}</h2>
-                <p>{property?.location}</p>
+                <h2 style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
+                  {property?.title}
+                </h2>
+                <p style={{ fontWeight: "bold" }}>{property?.location}</p>
               </div>
             </div>
             <div className="col-lg-5 col-xl-4">

@@ -1,13 +1,13 @@
 module.exports = [
   {
     id: 1,
-    img: "/assets/images/property/cliffton.webp",
+    img: "/assets/images/property/2_.png",
     price: "235,000",
     lat: 40.7279707552121,
     long: -74.07152705896405,
     type: "Apartment",
     title: "The Cliffton Valley - 3BR",
-    location: `Panthaghati, Shimla, Himachal Pradesh, India`,
+    location: `Cliffton Valley - Panthaghati, Shimla, Himachal Pradesh, India`,
     saleTag: ["Featured", "For Sale"],
     garages: "2",
     description: [
@@ -111,7 +111,7 @@ Prime mountain location with panoramic views
   {
     id: 2,
     img: "/assets/images/property/sparkle.webp",
-    price: "595,400",
+    price: "365,000",
     type: "Apartment",
     title: "Sparkle Tower 2 - 1BR | Marina View",
     location: `1Sparkle Tower - Dubai Marina, Dubai, United Arab Emirates`,
@@ -216,7 +216,7 @@ Prime mountain location with panoramic views
   },
   {
     id: 3,
-    img: "/assets/images/property/jw.webp",
+    img: "/assets/images/property/3_.png",
     price: "830,860",
     type: "Apartment",
     title: "JW Marriott Hotel Marina - 1BR ",
@@ -313,7 +313,7 @@ Access to premium amenities: infinity pool, spa, gym, and 24/7 security
   },
   {
     id: 4,
-    img: "/assets/images/property/fountain.webp",
+    img: "/assets/images/property/4_.png",
     price: "1,362,398",
     type: "Apartment",
     title: "Fountain Views Tower 2 - 2BR",
@@ -390,16 +390,17 @@ Strong rental and capital appreciation potential
     built: "2014",
     featured: "rent",
     created_at: 1667181237171,
-    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.7639942027336!2d55.135551583100884!3d25.07722282051738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4341e0e5086d%3A0x19cb16acf1324515!2sJW%20Marriott%20Hotel%20Marina!5e1!3m2!1sen!2sin!4v1727859217940!5m2!1sen!2sin",
+    // loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.7639942027336!2d55.135551583100884!3d25.07722282051738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4341e0e5086d%3A0x19cb16acf1324515!2sJW%20Marriott%20Hotel%20Marina!5e1!3m2!1sen!2sin!4v1727859217940!5m2!1sen!2sin",
     tokensymbol: "FARFV",
     tokenprice: "1 USDC",
     rentalyeild: "7% p.a",
     capitalappreciation: "9% p.a",
     roi: "80%",
+    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3817.113087492275!2d55.27913147560772!3d25.19396557771305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f68261ae66429%3A0x6233947d35a48604!2sThe%20Address%20Residence%20Fountain%20View%202%20-%20Downtown%20Dubai%20-%20Dubai%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2sin!4v1728463079718!5m2!1sen!2sin",
   },
   {
     id: 5,
-    img: "/assets/images/property/vancouver.webp",
+    img: "/assets/images/property/5_.png",
     price: "645,105",
     type: "Apartment",
     title: "Vancouver House - 1BR",
@@ -463,7 +464,7 @@ Award-winning architecture and design
       },
     ],
     posterAvatar: "/assets/images/property/pposter1.png",
-    posterName: "Ali Tufan",
+    posterName: "Fractible VH2902",
     postedYear: "1 year ago",
     imgList: [
       "/assets/images/property/van1.webp",
@@ -488,20 +489,22 @@ Award-winning architecture and design
     rentalyeild: "6% p.a",
     capitalappreciation: "11% p.a",
     roi: "85%",
+    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2752.211306697377!2d-123.13380502334859!3d49.27494377139161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673d230009e9b%3A0xb1155763f9af6390!2s1480%20Howe%20St%2C%20Vancouver%2C%20BC%20V6Z%200G5%2C%20Canada!5e1!3m2!1sen!2sin!4v1728462931834!5m2!1sen!2sin",
+    garages: "1",
   },
+
   {
     id: 6,
-    img: "/assets/images/property/fp17.jpg",
-    price: "16000",
-    type: "Single Family Home",
-    title: "Gorgeous Villa Bay View",
-    location: `1421 San Pedro
-St, Los Angeles, CA 900015`,
+    img: "/assets/images/myimage/toronto.jpg",
+    price: "1,298,000",
+    type: "Detached House ",
+    title: "Church Street House - 3BR ",
+    location: `Church Street, Downtown Toronto, Toronto , ON, Canada `,
     saleTag: ["Featured", "For Rent"],
     itemDetails: [
       {
         name: "Beds",
-        number: "4",
+        number: "3",
       },
       {
         name: "Baths",
@@ -509,7 +512,7 @@ St, Los Angeles, CA 900015`,
       },
       {
         name: "SqFt",
-        number: "9500",
+        number: "5237",
       },
     ],
     posterAvatar: "/assets/images/property/pposter2.png",

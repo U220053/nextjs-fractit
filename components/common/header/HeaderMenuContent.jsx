@@ -117,7 +117,7 @@ const HeaderMenuContent = ({ float = "" }) => {
     >
       <li className="last">
         <Link
-          href="/#"
+          href="https://fractit.com/"
           // className={pathname === "/reit" ? "ui-active" : undefined}
         >
           Home
@@ -125,10 +125,18 @@ const HeaderMenuContent = ({ float = "" }) => {
       </li>
       <li className="last">
         <Link
+          href="/#"
+          // className={pathname === "/reit" ? "ui-active" : undefined}
+        >
+          Properties
+        </Link>
+      </li>
+      <li className="last">
+        <Link
           href="/reit"
           className={pathname === "/reit" ? "ui-active" : undefined}
         >
-          Reit
+          REIT
         </Link>
       </li>
       <li className="last">
@@ -149,12 +157,16 @@ const HeaderMenuContent = ({ float = "" }) => {
       </li>
 
       {/* Wallet Connect/Account View Button */}
-      <li className={`list-inline-item add_listing ${float}`}>
+      <li>
         <Button
-          style={{ backgroundColor: "#ff5a5f", color: "white" }}
+          style={{
+            backgroundColor: "#3b82f6",
+            color: "white",
+            borderColor: "#3b82f6",
+          }}
           onClick={() => setShowAbstraxion(true)}
         >
-          {isConnected ? "VIEW ACCOUNT" : "CONNECT WALLET"}
+          {isConnected ? "LOG OUT" : "CONNECT WALLET"}
         </Button>
       </li>
 

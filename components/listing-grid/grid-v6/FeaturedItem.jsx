@@ -121,7 +121,7 @@ const FeaturedItem = () => {
 
   // status handler
   let content = properties
-    ?.slice(0, 5)
+    ?.slice(0, 6)
     ?.filter(keywordHandler)
     ?.filter(locationHandler)
     ?.filter(statusHandler)
@@ -137,52 +137,61 @@ const FeaturedItem = () => {
     ?.filter(featuredHandler)
     .map((item) => (
       <div className="col-md-6 col-lg-4" key={item.id}>
-        <div className="feat_property home7 style4">
-          <div className="thumb">
-            <Image
-              width={342}
-              height={220}
-              className="img-whp w-100 h-100 cover"
-              src={item.img}
-              alt="fp1.jpg"
-            />
-            <div className="thmb_cntnt">
-              <Link
-                href={`/listing-details-v1/${item.id}`}
-                className="fp_price"
-              >
-                ${item.price}
-              </Link>
-            </div>
-          </div>
-          <div className="details">
-            <div className="tc_content">
-              <p className="text-thm">{item.type}</p>
-              <h4>
-                <Link href={`/listing-details-v1/${item.id}`}>
-                  {item.title}
+        <Link href={`/listing-details-v1/${item?.id}`} passHref>
+          <div className="feat_property home7 style4">
+            <div className="thumb">
+              <Image
+                width={342}
+                height={220}
+                className="img-whp w-100 h-100 cover"
+                src={item.img}
+                alt="fp1.jpg"
+              />
+              <div className="thmb_cntnt">
+                <Link
+                  href={`/listing-details-v1/${item.id}`}
+                  className="fp_price"
+                >
+                  ${item.price}
                 </Link>
-              </h4>
-              <p>
-                <span className="flaticon-placeholder"></span>
-                {item.location}
-              </p>
-
-              <ul className="prop_details mb0">
-                {item.itemDetails.map((val, i) => (
-                  <li className="list-inline-item" key={i}>
-                    <a href="#">
-                      {val.name}: {val.number}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              </div>
             </div>
-            {/* End .tc_content */}
+            <div className="details">
+              <div className="tc_content">
+                <p className="text-thm">{item.type}</p>
+                <h4>
+                  {/* <Link href={`/listing-details-v1/${item?.id}`}>
+                  {item.title}
+                </Link> */}
+                  {item?.id !== 6 ? (
+                    <Link href={`/listing-details-v1/${item?.id}`}>
+                      {item?.title}
+                    </Link>
+                  ) : (
+                    item?.title
+                  )}
+                </h4>
+                <p>
+                  <span className="flaticon-placeholder"></span>
+                  {item.location}
+                </p>
 
-            {/* End .fp_footer */}
+                <ul className="prop_details mb0">
+                  {item.itemDetails.map((val, i) => (
+                    <li className="list-inline-item" key={i}>
+                      <a href="#">
+                        {val.name}: {val.number}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* End .tc_content */}
+
+              {/* End .fp_footer */}
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     ));
 

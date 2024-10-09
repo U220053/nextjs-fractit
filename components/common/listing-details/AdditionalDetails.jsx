@@ -22,6 +22,10 @@ const AdditionalDetails = ({ id }) => {
               Rental Yield (Estm.) : <span>{property?.rentalyeild}</span>
             </p>
           </li>
+        </ul>
+      </div>
+      <div className="col-md-6 col-lg-6">
+        <ul className="list-inline-item">
           <li>
             <p>
               Capital Appriciation(Estm.) :{" "}

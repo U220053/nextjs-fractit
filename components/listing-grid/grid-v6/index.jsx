@@ -9,6 +9,7 @@ import SidebarListing from "../../common/listing/SidebarListing";
 import PopupSignInUp from "../../common/PopupSignInUp";
 import BreadCrumb2 from "./BreadCrumb2";
 import FeaturedItem from "./FeaturedItem";
+import BreadcrumbBanner3 from "./BreadcrumbBanner3";
 
 const index = () => {
   return (
@@ -18,17 +19,17 @@ const index = () => {
 
       {/* <!--  Mobile Menu --> */}
       <MobileMenu />
-
+      <BreadcrumbBanner3 />
       {/* <!-- Modal --> */}
       <PopupSignInUp />
 
       {/* <!-- Listing Grid View --> */}
-      <section className="our-listing bgc-f7 pb30-991 mt85 md-mt0">
+      <section className="our-listing bgc-f7 pb30-991  md-mt0">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-lg-6">
+            {/* <div className="col-md-8 col-lg-6">
               <BreadCrumb2 />
-            </div>
+            </div> */}
             {/* End .col */}
 
             <div className="col-md-4 col-lg-6">

@@ -5,16 +5,16 @@ const PropertyItem = ({ id }) => {
   return (
     <ul className="mb0">
       <li className="list-inline-item">
-        <a href="#">Apartment</a>
+        <div>Apartment</div>
       </li>
       <li className="list-inline-item">
-        <a href="#">Beds: {property.itemDetails[0].number}</a>
+        <div>Beds: {property.itemDetails[0].number}</div>
       </li>
       <li className="list-inline-item">
-        <a href="#">Baths: {property.itemDetails[1].number}</a>
+        <div>Baths: {property.itemDetails[1].number}</div>
       </li>
       <li className="list-inline-item">
-        <a href="#">Sq Ft: {property.itemDetails[2].number}</a>
+        <div>Sq Ft: {property.itemDetails[2].number}</div>
       </li>
     </ul>
   );

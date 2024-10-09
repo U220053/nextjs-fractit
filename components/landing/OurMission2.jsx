@@ -112,15 +112,26 @@ const OurMission2 = () => {
             flexible loans. Access liquidity without selling your property
             shares.
           </p>
-          <p>
+          {/* <p>
             <span style={{ fontWeight: "bold" }}> FractIt Advantage</span> -No
             Need to Sell: Keep your property ownership while accessing capital.
             -Smart Contracts: Automated, secure transactions without
             intermediaries. -Flexible Repayment: Choose terms that suit your
             financial needs.
+          </p> */}
+          <p>
+            <span style={{ fontWeight: "bold" }}> FractIt Advantage</span>{" "}
+            <br />
+            - No Need to Sell: Keep your property ownership while accessing
+            capital.
+            <br />
+            - Smart Contracts: Automated, secure transactions without
+            intermediaries.
+            <br />- Flexible Repayment: Choose terms that suit your financial
+            needs.
           </p>
 
-          <ul className="ab_counting">
+          {/* <ul className="ab_counting">
             {missionContent.map((item) => (
               <li className="list-inline-item" key={item.id}>
                 <div className="about_counting">
@@ -134,7 +145,7 @@ const OurMission2 = () => {
                 </div>
               </li>
             ))}
-          </ul>
+          </ul> */}
           {/* End .ab_counting */}
         </div>
       </div>
@@ -144,7 +155,7 @@ const OurMission2 = () => {
         <div className="about_thumb">
           <Image
             className="img-fluid w100 cover"
-            src="/assets/images/about/1.jpg"
+            src="/assets/images/myimage/Frame 103.png"
             alt="1.jpg"
             width={400}
             height={400}

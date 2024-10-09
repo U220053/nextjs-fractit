@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -28,22 +28,27 @@ const Header = () => {
     >
       <div className="container-fluid p0">
         {/* <!-- Menu Toggle btn--> */}
-        <Link href="/" className="navbar_brand float-start dn-smd">
+        {/* navbar_brand  */}
+        <Link
+          href="/"
+          className="float-start dn-smd navbar_brand"
+          style={{ marginTop: "30px" }}
+        >
           <Image
-            width={40}
+            width={200}
             height={45}
             className="logo1 img-fluid"
-            src="/assets/images/header-logo2.png"
+            src="/assets/images/Logo_black-blue.png"
             alt="header-logo2.png"
           />
           <Image
-            width={40}
+            width={200}
             height={45}
             className="logo2 img-fluid"
-            src="/assets/images/header-logo2.png"
+            src="/assets/images/Logo_black-blue.png"
             alt="header-logo2.png"
           />
-          <span>FindHouse</span>
+          {/* <span>FindHouse</span> */}
         </Link>
         {/* site logo brand */}
 

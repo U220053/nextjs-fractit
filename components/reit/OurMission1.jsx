@@ -36,6 +36,17 @@ const OurMission1 = () => {
             Each REIT token represents a weighted share of multiple properties,
             providing both rental income and capital appreciation.
           </p>
+          <p>
+            Fractit REIT introduces a revolutionary approach to real estate
+            investing through blockchain tokenization. By pooling fractional
+            shares of multiple tokenized properties into a single, diversified
+            token, we offer investors exposure to a balanced portfolio of real
+            estate assets. Each REIT token is backed by a specific allocation of
+            property shares, providing a combination of rental income and
+            potential capital appreciation. With Fractit REIT, investors gain
+            access to professionally managed, diversified property assets with
+            full transparency and liquidity.
+          </p>
           {/* <p>
             Maecenas quis viverra metus, et efficitur ligula. Nam congue augue
             et ex congue, sed luctus lectus congue. Integer convallis
@@ -49,7 +60,7 @@ const OurMission1 = () => {
           <ul className="ab_counting">
             {missionContent.map((item) => (
               <li className="list-inline-item" key={item.id}>
-                <div className="about_counting">
+                {/* <div className="about_counting">
                   <div className="icon">
                     <span className={`${item.icon}`}></span>
                   </div>
@@ -57,7 +68,7 @@ const OurMission1 = () => {
                     <h3>{item.number}</h3>
                     <p>{item.meta}</p>
                   </div>
-                </div>
+                </div> */}
               </li>
             ))}
           </ul>
@@ -70,7 +81,7 @@ const OurMission1 = () => {
         <div className="about_thumb">
           <Image
             className="img-fluid w100 cover"
-            src="/assets/images/about/1.jpg"
+            src="/assets/images/myimage/Frame 103.png"
             alt="1.jpg"
             width={200}
             height={200}

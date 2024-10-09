@@ -25,17 +25,29 @@ const DetailsContent = () => {
   return (
     <>
       <div className="listing_single_description">
-        <div className="lsd_list">
+        <div className="lsd_list ">
           <PropertyItem id={id} />
         </div>
         {/* End .lsd_list */}
+        <h4 className="mb30" style={{ fontWeight: "bold", color: "red" }}>
+          Disclaimer:{" "}
+          {/* <p style={{ color: "red", marginBottom: "10px", fontWeight: "bold" }}> */}
+          This is a test listing on the Fractit testnet platform. The properties
+          and details provided are for testing purposes only. Tokens minted here
+          are test tokens with no real-world value and do not represent
+          ownership or rights to any actual assets.
+          {/* </p> */}
+        </h4>
 
-        <h4 className="mb30">Description</h4>
+        <h4 className="mb30" style={{ fontWeight: "bold" }}>
+          Description
+        </h4>
+
         <PropertyDescriptions id={id} />
       </div>
       {/* End .listing_single_description */}
 
-      <div className="additional_details">
+      <div className="application_statics mt30">
         <div className="row">
           <div className="col-lg-12">
             <h4 className="mb15">Property Details</h4>
@@ -43,17 +55,17 @@ const DetailsContent = () => {
           <PropertyDetails id={id} />
         </div>
       </div>
-      {/* End .additional_details */}
+      {/* End .application_statics mt30 */}
 
-      <div className="additional_details">
+      <div className="application_statics mt30">
         <div className="row">
           <div className="col-lg-12">
-            <h4 className="mb15">Additional details</h4>
+            <h4 className="mb15 ">Token details</h4>
           </div>
           <AdditionalDetails id={id} />
         </div>
       </div>
-      {/* End .additional_details */}
+      {/* End .application_statics mt30 */}
 
       {/* <div className="property_attachment_area">
         <h4 className="mb30">Property Attachments</h4>
@@ -87,9 +99,9 @@ const DetailsContent = () => {
 
       {/* End property-video  */}
 
-      <div className="walkscore_area mt30">
+      {/* <div className="walkscore_area mt30">
         <WalkScore />
-      </div>
+      </div> */}
       {/* End walkscore_area */}
 
       {/* End what's nearby area */}

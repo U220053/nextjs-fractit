@@ -32,9 +32,9 @@ const ContactWithAgent = ({ id }) => {
   const [mintAmount, setMintAmount] = useState("");
   const [usdcBalance, setUsdcBalance] = useState("0");
   const [mintNft, setMintNft] = useState(undefined);
+  const [inputError, setInputError] = useState("");
 
   useEffect(() => {
-    console.log("Account:", account);
     if (account && account.bech32Address != "") {
       setIsConnected(true);
       checkUsdcBalance();
@@ -68,13 +68,10 @@ const ContactWithAgent = ({ id }) => {
       }
 
       const queryMsg = { num_tokens: {} };
-      console.log("Query Message:", queryMsg);
-
       const queryRes = await client.queryContractSmart(
         nftContractAddress,
         queryMsg
       );
-      console.log("Query Result:", queryRes);
 
       setMintNft(queryRes.count);
     } catch (error) {
@@ -90,16 +87,8 @@ const ContactWithAgent = ({ id }) => {
         throw new Error("Wallet not connected");
       }
 
-      console.log("Wallet Address:", account.bech32Address);
       const amount = parseInt(mintAmount) * 1000000;
       const mintMsg = { deposit: {} };
-      const fee = {
-        amount: coins(feeAmount, feeDenom),
-        gas: gasLimit,
-      };
-
-      console.log("Mint Message:", mintMsg);
-      console.log("Fee:", fee);
 
       const mintRes = await client.execute(
         account.bech32Address,
@@ -113,8 +102,6 @@ const ContactWithAgent = ({ id }) => {
         coins(amount, ibcDenom)
       );
 
-      console.log("Mint Result:", mintRes);
-
       setExecuteResult(mintRes);
       toast.success("Token minted successfully!");
       checkUsdcBalance();
@@ -126,13 +113,26 @@ const ContactWithAgent = ({ id }) => {
     }
   };
 
-  console.log("mintNft", mintNft);
   const property = properties?.find((item) => item.id == id) || properties[0];
 
   return (
     <div className="container mx-auto p-4 burnt-bg text-black">
-      <div style={{ marginBottom: "10px" }}>STARTING AT : 1234</div>
 
+      <div style={{ marginBottom: "10px" }}>
+        {id == 2 ? (
+          <>
+            <div>Token Symbol: FJWHM </div>Token Price: 1 USDC<div></div>
+            <div>Total Minted: 100/450,000</div>{" "}
+          </>
+        ) : id == 1 ? (
+          <>
+           
+            Total Minted: 235/235
+          </>
+        ) : (
+          <>Coming Soon</>
+        )}
+      </div>
       <header className="flex justify-between items-center mb-8">
         <div className="mb-4" style={{ margin: "10px" }}>
           <input
@@ -144,39 +144,57 @@ const ContactWithAgent = ({ id }) => {
             style={{ margin: "10px" }}
           />
         </div>
-    
-        <Button
-          onClick={() => setShowAbstraxion(true)}
-          style={{ backgroundColor: "#ff5a5f", color: "white" }}
-          className=" btn btn-block btn-thm w-100"
-        >
-          {isConnected ? "VIEW ACCOUNT" : "CONNECT WALLET"}
-        </Button>
+     
       </header>
-
       <main className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <div className="mb-6"></div>
           <div className="mb-6">
             <div className="flex justify-between mt-2 ">
-              <span style={{ color: "#ff5a5f" }} className="font-bold">
+              <span style={{ color: "#3b82f6" }} className="font-bold">
                 Balance: {usdcBalance} USDC
               </span>
             </div>
           </div>
 
           {isConnected ? (
-            <Button
-              style={{ backgroundColor: "#ff5a5f", color: "white" }}
-              className=" btn btn-block btn-thm w-100"
-              onClick={handleMint}
-              disabled={loading}
-            >
-              {loading ? "BUYING..." : "BUY NOW"}
-            </Button>
+            id == 2 ? (
+              <Button
+                style={{ backgroundColor: "#3b82f6", color: "white" }}
+                className=" btn btn-block btn-thm w-100"
+                onClick={handleMint}
+                disabled={loading}
+              >
+                {loading ? "MINTING..." : "MINT"}
+              </Button>
+            ) : id == 1 ? (
+              <Button
+                style={{
+                  backgroundColor: "#3b82f6",
+                  color: "white",
+                  cursor: "not-allowed",
+                }}
+                className=" btn btn-block btn-thm w-100"
+                disabled
+              >
+                Minting Over
+              </Button>
+            ) : (
+              <Button
+                style={{
+                  backgroundColor: "#3b82f6",
+                  color: "white",
+                  cursor: "not-allowed",
+                }}
+                className=" btn btn-block btn-thm w-100"
+                disabled
+              >
+                COMING SOON
+              </Button>
+            )
           ) : (
             <Button
-              style={{ backgroundColor: "#ff5a5f", color: "white" }}
+              style={{ backgroundColor: "#3b82f6", color: "white" }}
               className=" btn btn-block btn-thm w-100"
               onClick={() => setShowAbstraxion(true)}
             >
@@ -185,7 +203,6 @@ const ContactWithAgent = ({ id }) => {
           )}
         </div>
       </main>
-
       <Abstraxion
         onClose={() => {
           setShowAbstraxion(false);
@@ -231,6 +248,7 @@ const ContactWithAgent = ({ id }) => {
   const [mintAmount, setMintAmount] = useState("");
   const [usdcBalance, setUsdcBalance] = useState("0");
   const [mintNft, setMintNft] = useState(undefined);
+  const [inputError, setInputError] = useState("");
 
   useEffect(() => {
     if (account && account.bech32Address != "") {
@@ -277,7 +295,27 @@ const ContactWithAgent = ({ id }) => {
     }
   };
 
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    if (
+      value === "" ||
+      (Number(value) >= 1 &&
+        Number(value) <= 20 &&
+        Number.isInteger(Number(value)))
+    ) {
+      setMintAmount(value);
+      setInputError("");
+    } else {
+      setInputError("Please enter a whole number between 1 and 20.");
+    }
+  };
+
   const handleMint = async () => {
+    if (inputError || mintAmount === "") {
+      toast.error("Please enter a valid amount before minting.");
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -315,35 +353,52 @@ const ContactWithAgent = ({ id }) => {
 
   return (
     <div className="container mx-auto p-4 burnt-bg text-black">
-      <div style={{ marginBottom: "10px" }}>STARTING AT : 1234</div>
-
-      <header className="flex justify-between items-center mb-8">
-        <div className="mb-4" style={{ margin: "10px" }}>
-          <input
-            type="number"
-            className="form-control"
-            placeholder="Enter amount"
-            value={mintAmount}
-            onChange={(e) => setMintAmount(e.target.value)}
-            style={{ margin: "10px" }}
-          />
-        </div>
-        <Button
-          onClick={() => setShowAbstraxion(true)}
-          style={{ backgroundColor: "#ff5a5f", color: "white" }}
-          className=" btn btn-block btn-thm w-100"
-        >
-          {isConnected ? "VIEW ACCOUNT" : "CONNECT WALLET"}
-        </Button>
-      </header>
+      <div style={{ marginBottom: "10px" }}>
+        {id == 2 ? (
+          <>
+            <div>Token Symbol: FJWHM</div> <div>Token Price: 1 USDC </div>
+            <div>Token Sold: 100/450,000</div>
+          </>
+        ) : id == 1 ? (
+          <>Token Purchased: 235/235</>
+        ) : (
+          <>Coming Soon</>
+        )}
+      </div>
+      {id == 2 ? (
+        <></>
+      ) : (
+        <>
+          {" "}
+          <header className="flex justify-between items-center mb-8">
+            <div className="mb-4" style={{ margin: "10px" }}>
+              <input
+                type="number"
+                className="form-control"
+                placeholder="Enter amount (1-20)"
+                value={mintAmount}
+                onChange={handleInputChange}
+                min="1"
+                max="20"
+                style={{ margin: "10px" }}
+              />
+              {inputError && (
+                <div style={{ color: "red", marginTop: "5px" }}>
+                  {inputError}
+                </div>
+              )}
+            </div>
+          </header>
+        </>
+      )}
 
       <main className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <div className="mb-6"></div>
           <div className="mb-6">
             <div className="flex justify-between mt-2 ">
-              <span style={{ color: "#ff5a5f" }} className="font-bold">
-                Balance: {usdcBalance} USDC
+              <span style={{ color: "#3b82f6" }} className="font-bold">
+                Wallet Balance: {usdcBalance} USDC
               </span>
             </div>
           </div>
@@ -351,21 +406,32 @@ const ContactWithAgent = ({ id }) => {
           {isConnected ? (
             id == 2 ? (
               <Button
-                style={{ backgroundColor: "#ff5a5f", color: "white" }}
-                className=" btn btn-block btn-thm w-100"
+                style={{
+                  backgroundColor: "#3b82f6",
+                  color: "white",
+                  borderColor: "#3b82f6",
+                }}
+                className="btn btn-block btn-thm w-100"
                 onClick={handleMint}
-                disabled={loading}
+                disabled={loading || !!inputError || mintAmount === ""}
               >
-                {loading ? "BUYING..." : "BUY NOW"}
+                {id == 2
+                  ? loading
+                    ? "MINTING..."
+                    : "MINT 1 TOKEN"
+                  : loading
+                  ? "MINTING..."
+                  : "MINT"}
+                {/* {loading ? "MINTING..." : "MINT"} */}
               </Button>
             ) : (
               <Button
                 style={{
-                  backgroundColor: "#ff5a5f",
+                  backgroundColor: "#3b82f6",
                   color: "white",
                   cursor: "not-allowed",
                 }}
-                className=" btn btn-block btn-thm w-100"
+                className="btn btn-block btn-thm w-100"
                 disabled
               >
                 COMING SOON
@@ -373,8 +439,12 @@ const ContactWithAgent = ({ id }) => {
             )
           ) : (
             <Button
-              style={{ backgroundColor: "#ff5a5f", color: "white" }}
-              className=" btn btn-block btn-thm w-100"
+              style={{
+                backgroundColor: "#3b82f6",
+                color: "white",
+                borderColor: "#3b82f6",
+              }}
+              className="btn btn-block btn-thm w-100"
               onClick={() => setShowAbstraxion(true)}
             >
               CONNECT WALLET

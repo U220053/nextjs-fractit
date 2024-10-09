@@ -19,7 +19,15 @@ const ErrorPageContent = () => {
 
       {/* End form */}
 
-      <Link href="/" className="btn btn_error btn-thm">
+      <Link
+        href="/"
+        className="btn btn_error btn-thm"
+        style={{
+          backgroundColor: "#3b82f6",
+          color: "white",
+          borderColor: "#3b82f6",
+        }}
+      >
         Back To Home
       </Link>
     </div>
