@@ -119,15 +119,14 @@ const HeaderMenuContent = ({ float = "" }) => {
         <Link
           href="https://fractit.com/"
           // className={pathname === "/reit" ? "ui-active" : undefined}
+          target="_blank" // Opens the link in a new tab
+          rel="noopener noreferrer" // Security best practice for external link
         >
           Home
         </Link>
       </li>
       <li className="last">
-        <Link
-          href="/#"
-          // className={pathname === "/reit" ? "ui-active" : undefined}
-        >
+        <Link href="/#" className={pathname === "/" ? "ui-active" : undefined}>
           Properties
         </Link>
       </li>

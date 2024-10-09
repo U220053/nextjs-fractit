@@ -9,6 +9,7 @@ import FindProp2 from "./FindProp2";
 import WhyChoose1 from "./WhyChoose1";
 import MobileMenu from "../common/header/MobileMenu";
 import Link from "next/link";
+import Footer from "../common/footer/Footer";
 
 const metadata = {
   title:
@@ -154,6 +155,13 @@ const Reit = () => {
               {/* <h2 style={{ fontWeight: "bold" }}>Why Choose FractIt REIT?</h2> */}
               <ErrorPageContent />
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="footer_one">
+        <div className="container">
+          <div className="row">
+            <Footer />
           </div>
         </div>
       </section>

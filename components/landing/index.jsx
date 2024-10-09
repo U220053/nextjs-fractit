@@ -76,6 +76,7 @@ import LookingItem1 from "./LookingItem1";
 import MobileMenu from "../common/header/MobileMenu";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "../common/footer/Footer";
 
 const metadata = {
   title:
@@ -207,7 +208,7 @@ const Landing = () => {
                       <Image
                         width={1000}
                         height={1000}
-                        src="/assets/images/reit_demo.jpg"
+                        src="/assets/images/reit_demo.png"
                       />
                       <ErrorPageContent />
                     </div>
@@ -223,6 +224,13 @@ const Landing = () => {
             </div>
           </div>
         </section>
+      </section>
+      <section className="footer_one">
+        <div className="container">
+          <div className="row">
+            <Footer />
+          </div>
+        </div>
       </section>
     </>
   );

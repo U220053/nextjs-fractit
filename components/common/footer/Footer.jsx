@@ -36,10 +36,12 @@ const Footer = () => {
           <h4>Contact Us</h4>
           <ul className="list-unstyled">
             <li>
-              <a href="mailto:info@findhouse.com">hello@fractit.com</a>
+              <a style={{ color: "#8a99b3" }}>hello@fractit.com</a>
             </li>
             <li>
-              <a href="#">345 Robson St, Vancouver, BC V6B 6B3, Canada</a>
+              <a style={{ color: "#8a99b3" }}>
+                345 Robson St, Vancouver, BC V6B 6B3, Canada
+              </a>
             </li>
           </ul>
         </div>

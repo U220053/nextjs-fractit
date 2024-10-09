@@ -2,8 +2,7 @@ import Reit from "@/components/reit";
 import dynamic from "next/dynamic";
 
 export const metadata = {
-  title: "Hhaha || FindHouse - Real Estate React Template",
-  description: "FindHouse - Real Estate React Template",
+  title: " Fractit REIT: Diversified Real Estate Investment at Your Fingertips",
 };
 
 const index = () => {

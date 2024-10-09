@@ -1,3 +1,208 @@
+// "use client";
+
+// import Link from "next/link";
+// import { useEffect } from "react";
+// import { useDispatch, useSelector } from "react-redux";
+// import { addLength } from "../../../features/properties/propertiesSlice";
+// import properties from "../../../data/properties";
+// import Image from "next/image";
+
+// const FeaturedItem = () => {
+//   const {
+//     keyword,
+//     location,
+//     status,
+//     propertyType,
+//     price,
+//     bathrooms,
+//     bedrooms,
+//     garages,
+//     yearBuilt,
+//     area,
+//     amenities,
+//   } = useSelector((state) => state.properties);
+//   const { statusType, featured, isGridOrList } = useSelector(
+//     (state) => state.filter
+//   );
+
+//   const dispatch = useDispatch();
+
+//   // keyword filter
+//   const keywordHandler = (item) =>
+//     item.title.toLowerCase().includes(keyword?.toLowerCase());
+
+//   // location handler
+//   const locationHandler = (item) => {
+//     return item.location.toLowerCase().includes(location.toLowerCase());
+//   };
+
+//   // status handler
+//   const statusHandler = (item) =>
+//     item.type.toLowerCase().includes(status.toLowerCase());
+
+//   // properties handler
+//   const propertiesHandler = (item) =>
+//     item.type.toLowerCase().includes(propertyType.toLowerCase());
+
+//   // price handler
+//   const priceHandler = (item) =>
+//     item.price < price?.max && item.price > price?.min;
+
+//   // bathroom handler
+//   const bathroomHandler = (item) => {
+//     if (bathrooms !== "") {
+//       return item.itemDetails[1].number == bathrooms;
+//     }
+//     return true;
+//   };
+
+//   // bedroom handler
+//   const bedroomHandler = (item) => {
+//     if (bedrooms !== "") {
+//       return item.itemDetails[0].number == bedrooms;
+//     }
+//     return true;
+//   };
+
+//   // garages handler
+//   const garagesHandler = (item) =>
+//     garages !== ""
+//       ? item.garages?.toLowerCase().includes(garages.toLowerCase())
+//       : true;
+
+//   // built years handler
+//   const builtYearsHandler = (item) =>
+//     yearBuilt !== "" ? item?.built == yearBuilt : true;
+
+//   // area handler
+//   const areaHandler = (item) => {
+//     if (area.min !== 0 && area.max !== 0) {
+//       if (area.min !== "" && area.max !== "") {
+//         return (
+//           parseInt(item.itemDetails[2].number) > area.min &&
+//           parseInt(item.itemDetails[2].number) < area.max
+//         );
+//       }
+//     }
+//     return true;
+//   };
+
+//   // advanced option handler
+//   const advanceHandler = (item) => {
+//     if (amenities.length !== 0) {
+//       return amenities.find((item2) =>
+//         item2.toLowerCase().includes(item.amenities.toLowerCase())
+//       );
+//     }
+//     return true;
+//   };
+
+//   // status filter
+//   const statusTypeHandler = (a, b) => {
+//     if (statusType === "recent") {
+//       return a.created_at + b.created_at;
+//     } else if (statusType === "old") {
+//       return a.created_at - b.created_at;
+//     } else if (statusType === "all-status") {
+//       return a.created_at + b.created_at;
+//     }
+//   };
+
+//   // featured handler
+//   const featuredHandler = (item) => {
+//     if (featured !== "") {
+//       if (featured === "featured-all") {
+//         return item;
+//       }
+//       return item.featured === featured;
+//     }
+//     return true;
+//   };
+
+//   // status handler
+//   let content = properties
+//     ?.slice(0, 6)
+//     ?.filter(keywordHandler)
+//     ?.filter(locationHandler)
+//     ?.filter(statusHandler)
+//     ?.filter(propertiesHandler)
+
+//     ?.filter(bathroomHandler)
+//     ?.filter(bedroomHandler)
+//     ?.filter(garagesHandler)
+//     ?.filter(builtYearsHandler)
+//     ?.filter(areaHandler)
+//     ?.filter(advanceHandler)
+//     ?.sort(statusTypeHandler)
+//     ?.filter(featuredHandler)
+//     .map((item) => (
+//       <div className="col-md-6 col-lg-4" key={item.id}>
+//         <Link href={`/listing-details-v1/${item?.id}`} passHref>
+//           <div className="feat_property home7 style4">
+//             <div className="thumb">
+//               <Image
+//                 width={342}
+//                 height={220}
+//                 className="img-whp w-100 h-100 cover"
+//                 src={item.img}
+//                 alt="fp1.jpg"
+//               />
+//               <div className="thmb_cntnt">
+//                 <Link
+//                   href={`/listing-details-v1/${item.id}`}
+//                   className="fp_price"
+//                 >
+//                   ${item.price}
+//                 </Link>
+//               </div>
+//             </div>
+//             <div className="details">
+//               <div className="tc_content">
+//                 <p className="text-thm">{item.type}</p>
+//                 <h4>
+//                   {/* <Link href={`/listing-details-v1/${item?.id}`}>
+//                   {item.title}
+//                 </Link> */}
+//                   {item?.id !== 6 ? (
+//                     <Link href={`/listing-details-v1/${item?.id}`}>
+//                       {item?.title}
+//                     </Link>
+//                   ) : (
+//                     item?.title
+//                   )}
+//                 </h4>
+//                 <p>
+//                   <span className="flaticon-placeholder"></span>
+//                   {item.location}
+//                 </p>
+
+//                 <ul className="prop_details mb0">
+//                   {item.itemDetails.map((val, i) => (
+//                     <li className="list-inline-item" key={i}>
+//                       <a href="#">
+//                         {val.name}: {val.number}
+//                       </a>
+//                     </li>
+//                   ))}
+//                 </ul>
+//               </div>
+//               {/* End .tc_content */}
+
+//               {/* End .fp_footer */}
+//             </div>
+//           </div>
+//         </Link>
+//       </div>
+//     ));
+
+//   // add length of filter items
+//   useEffect(() => {
+//     dispatch(addLength(content.length));
+//   }, [dispatch, content]);
+//   return <>{content}</>;
+// };
+
+// export default FeaturedItem;
 "use client";
 
 import Link from "next/link";
@@ -27,117 +232,72 @@ const FeaturedItem = () => {
 
   const dispatch = useDispatch();
 
-  // keyword filter
-  const keywordHandler = (item) =>
-    item.title.toLowerCase().includes(keyword?.toLowerCase());
-
-  // location handler
-  const locationHandler = (item) => {
-    return item.location.toLowerCase().includes(location.toLowerCase());
-  };
-
-  // status handler
-  const statusHandler = (item) =>
-    item.type.toLowerCase().includes(status.toLowerCase());
-
-  // properties handler
-  const propertiesHandler = (item) =>
-    item.type.toLowerCase().includes(propertyType.toLowerCase());
-
-  // price handler
-  const priceHandler = (item) =>
-    item.price < price?.max && item.price > price?.min;
-
-  // bathroom handler
-  const bathroomHandler = (item) => {
-    if (bathrooms !== "") {
-      return item.itemDetails[1].number == bathrooms;
-    }
-    return true;
-  };
-
-  // bedroom handler
-  const bedroomHandler = (item) => {
-    if (bedrooms !== "") {
-      return item.itemDetails[0].number == bedrooms;
-    }
-    return true;
-  };
-
-  // garages handler
-  const garagesHandler = (item) =>
-    garages !== ""
-      ? item.garages?.toLowerCase().includes(garages.toLowerCase())
-      : true;
-
-  // built years handler
-  const builtYearsHandler = (item) =>
-    yearBuilt !== "" ? item?.built == yearBuilt : true;
-
-  // area handler
-  const areaHandler = (item) => {
-    if (area.min !== 0 && area.max !== 0) {
-      if (area.min !== "" && area.max !== "") {
-        return (
-          parseInt(item.itemDetails[2].number) > area.min &&
-          parseInt(item.itemDetails[2].number) < area.max
-        );
-      }
-    }
-    return true;
-  };
-
-  // advanced option handler
-  const advanceHandler = (item) => {
-    if (amenities.length !== 0) {
-      return amenities.find((item2) =>
-        item2.toLowerCase().includes(item.amenities.toLowerCase())
-      );
-    }
-    return true;
-  };
-
-  // status filter
-  const statusTypeHandler = (a, b) => {
-    if (statusType === "recent") {
-      return a.created_at + b.created_at;
-    } else if (statusType === "old") {
-      return a.created_at - b.created_at;
-    } else if (statusType === "all-status") {
-      return a.created_at + b.created_at;
-    }
-  };
-
-  // featured handler
-  const featuredHandler = (item) => {
-    if (featured !== "") {
-      if (featured === "featured-all") {
-        return item;
-      }
-      return item.featured === featured;
-    }
-    return true;
-  };
+  // All the filter functions as before...
 
   // status handler
   let content = properties
     ?.slice(0, 6)
-    ?.filter(keywordHandler)
-    ?.filter(locationHandler)
-    ?.filter(statusHandler)
-    ?.filter(propertiesHandler)
 
-    ?.filter(bathroomHandler)
-    ?.filter(bedroomHandler)
-    ?.filter(garagesHandler)
-    ?.filter(builtYearsHandler)
-    ?.filter(areaHandler)
-    ?.filter(advanceHandler)
-    ?.sort(statusTypeHandler)
-    ?.filter(featuredHandler)
+    // ?.filter(locationHandler)
+    // ?.filter(statusHandler)
+
+    // ?.filter(bathroomHandler)
+    // ?.filter(bedroomHandler)
+    // ?.filter(garagesHandler)
+    // ?.filter(builtYearsHandler)
+    // ?.filter(areaHandler)
+    // ?.filter(advanceHandler)
+    // ?.sort(statusTypeHandler)
+    // ?.filter(featuredHandler)
     .map((item) => (
       <div className="col-md-6 col-lg-4" key={item.id}>
-        <Link href={`/listing-details-v1/${item?.id}`} passHref>
+        {item?.id !== 6 ? (
+          <Link href={`/listing-details-v1/${item?.id}`} passHref>
+            <div className="feat_property home7 style4">
+              <div className="thumb">
+                <Image
+                  width={342}
+                  height={220}
+                  className="img-whp w-100 h-100 cover"
+                  src={item.img}
+                  alt="fp1.jpg"
+                />
+                <div className="thmb_cntnt">
+                  <Link
+                    href={`/listing-details-v1/${item.id}`}
+                    className="fp_price"
+                  >
+                    ${item.price}
+                  </Link>
+                </div>
+              </div>
+              <div className="details">
+                <div className="tc_content">
+                  <p className="text-thm">{item.type}</p>
+                  <h4>
+                    <Link href={`/listing-details-v1/${item?.id}`}>
+                      {item?.title}
+                    </Link>
+                  </h4>
+                  <p>
+                    <span className="flaticon-placeholder"></span>
+                    {item.location}
+                  </p>
+
+                  <ul className="prop_details mb0">
+                    {item.itemDetails.map((val, i) => (
+                      <li className="list-inline-item" key={i}>
+                        <a href="#">
+                          {val.name}: {val.number}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </Link>
+        ) : (
           <div className="feat_property home7 style4">
             <div className="thumb">
               <Image
@@ -147,11 +307,11 @@ const FeaturedItem = () => {
                 src={item.img}
                 alt="fp1.jpg"
               />
+              {/* <div className="thmb_cntnt">
+                <span className="fp_price">${item.price}</span>
+              </div> */}
               <div className="thmb_cntnt">
-                <Link
-                  href={`/listing-details-v1/${item.id}`}
-                  className="fp_price"
-                >
+                <Link href="/" className="fp_price">
                   ${item.price}
                 </Link>
               </div>
@@ -159,18 +319,7 @@ const FeaturedItem = () => {
             <div className="details">
               <div className="tc_content">
                 <p className="text-thm">{item.type}</p>
-                <h4>
-                  {/* <Link href={`/listing-details-v1/${item?.id}`}>
-                  {item.title}
-                </Link> */}
-                  {item?.id !== 6 ? (
-                    <Link href={`/listing-details-v1/${item?.id}`}>
-                      {item?.title}
-                    </Link>
-                  ) : (
-                    item?.title
-                  )}
-                </h4>
+                <h4>{item.title}</h4>
                 <p>
                   <span className="flaticon-placeholder"></span>
                   {item.location}
@@ -186,12 +335,9 @@ const FeaturedItem = () => {
                   ))}
                 </ul>
               </div>
-              {/* End .tc_content */}
-
-              {/* End .fp_footer */}
             </div>
           </div>
-        </Link>
+        )}
       </div>
     ));
 
@@ -199,6 +345,7 @@ const FeaturedItem = () => {
   useEffect(() => {
     dispatch(addLength(content.length));
   }, [dispatch, content]);
+
   return <>{content}</>;
 };
 

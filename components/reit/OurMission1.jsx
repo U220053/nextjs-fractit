@@ -24,7 +24,7 @@ const OurMission1 = () => {
 
   return (
     <>
-      <div className="col-lg-8 col-xl-7">
+      <div className="col-lg-8 col-xl-7" style={{ marginTop: "4rem" }}>
         <div className="about_content">
           <p className="large">
             Learn how our REIT tokens offer transparency, liquidity, and

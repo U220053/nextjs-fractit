@@ -104,13 +104,17 @@ const OurMission2 = () => {
 
   return (
     <>
-      <div className="col-lg-8 col-xl-7">
+      <div className="col-lg-8 col-xl-7" style={{ marginTop: "4rem" }}>
         <div className="about_content">
           <p className="large">Unlock the Value of Your Property Holdings</p>
           <p>
-            FractIt allows you to leverage your tokenized real estate assets for
-            flexible loans. Access liquidity without selling your property
-            shares.
+            FractIt’s lending feature allows users to unlock liquidity by using
+            their Fractible tokens as collateral. Property owners can leverage
+            their tokenized real estate holdings to secure loans without selling
+            their assets, offering a flexible way to access funds while
+            retaining ownership. This innovative lending solution provides fast
+            access to capital with the security of blockchain-backed real estate
+            assets.
           </p>
           {/* <p>
             <span style={{ fontWeight: "bold" }}> FractIt Advantage</span> -No

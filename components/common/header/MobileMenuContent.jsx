@@ -1,6 +1,7 @@
 "use client";
 
 // import "react-pro-sidebar/dist/css/styles.css";
+import React, { useState, useEffect } from "react";
 import {
   ProSidebar,
   SidebarHeader,
@@ -12,6 +13,13 @@ import {
   Sidebar,
 } from "react-pro-sidebar";
 import Link from "next/link";
+import { Button } from "@burnt-labs/ui";
+import {
+  Abstraxion,
+  useAbstraxionAccount,
+  useAbstraxionSigningClient,
+  useModal,
+} from "@burnt-labs/abstraxion";
 
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -19,11 +27,28 @@ import { usePathname, useRouter } from "next/navigation";
 const MobileMenuContent = () => {
   const pathname = usePathname();
   const router = useRouter();
+  const { data: account } = useAbstraxionAccount();
+  const { client, logout } = useAbstraxionSigningClient();
+  const [showAbstraxion, setShowAbstraxion] = useModal();
+  const [isConnected, setIsConnected] = useState(false);
+
+  useEffect(() => {
+    if (account && account.bech32Address !== "") {
+      setIsConnected(true);
+    } else {
+      setIsConnected(false);
+    }
+  }, [account]);
 
   return (
     <>
       <div className="sidebar-header">
-        <Link href="/" className="sidebar-header-inner">
+        <Link
+          href="/"
+          className="sidebar-header-inner"
+          target="_blank" // Opens the link in a new tab
+          rel="noopener noreferrer"
+        >
           <Image
             width={100}
             height={45}
@@ -91,232 +116,32 @@ const MobileMenuContent = () => {
               Account
             </div>
           </MenuItem>
-          {/* <SubMenu
-            label="Home"
-            className={
-              home.some(
-                (page) =>
-                  page.routerPath?.split("/")[1] === pathname.split("/")[1]
-              )
-                ? "parent-menu-active"
-                : "inactive-mobile-menu"
-            }
-          >
-            {home.map((val, i) => (
-              <MenuItem key={i} active={true}>
-                <div
-                  onClick={() => router.push(val.routerPath)}
-                  className={
-                    val.routerPath?.split("/")[1] === pathname.split("/")[1]
-                      ? "ui-active"
-                      : "inactive-mobile-menu"
-                  }
-                >
-                  {val.name}
-                </div>
-              </MenuItem>
-            ))}
-          </SubMenu> */}
-          {/* End Home Home */}
-
-          {/* <SubMenu
-            label="Listing"
-            className={
-              listing.some((parent) => {
-                return parent.items.some(
-                  (page) =>
-                    page.routerPath?.split("/")[1] === pathname.split("/")[1]
-                );
-              })
-                ? "parent-menu-active"
-                : "inactive-mobile-menu"
-            }
-          >
-            {listing.map((item) => (
-              <SubMenu
-                label={item.title}
-                className={
-                  item.items.some(
-                    (page) =>
-                      page.routerPath?.split("/")[1] === pathname.split("/")[1]
-                  )
-                    ? "ui-active plus alt"
-                    : "plus alt inactive-mobile-menu"
-                }
-                key={item.id}
-              >
-                {item.items.map((val, i) => (
-                  <MenuItem key={i}>
-                    <div
-                      onClick={() => router.push(val.routerPath)}
-                      className={
-                        pathname?.split("/")[1] ===
-                        val.routerPath?.split("/")[1]
-                          ? "ui-active"
-                          : "inactive-mobile-menu"
-                      }
-                    >
-                      {val.name}
-                    </div>
-                  </MenuItem>
-                ))}
-              </SubMenu>
-            ))}
-          </SubMenu> */}
-          {/* End Pages Listing */}
-
-          {/* <SubMenu
-            label="Property"
-            className={
-              property.some((parent) => {
-                return parent.items.some(
-                  (page) =>
-                    page.routerPath?.split("/")[1] === pathname.split("/")[1] ||
-                    page.routerPath?.split("/")[1] + "/[id]" ===
-                      pathname.split("/")[1]
-                );
-              })
-                ? "parent-menu-active"
-                : "inactive-mobile-menu"
-            }
-          >
-            {property.map((item) => (
-              <SubMenu
-                label={item.title}
-                className={
-                  item.items.some(
-                    (page) =>
-                      page.routerPath?.split("/")[1] ===
-                        pathname.split("/")[1] ||
-                      page.routerPath?.split("/")[1] + "/[id]" ===
-                        pathname.split("/")[1]
-                  )
-                    ? "ui-active plus alt"
-                    : "plus alt inactive-mobile-menu"
-                }
-                key={item.id}
-              >
-                {item.items.map((val, i) => (
-                  <MenuItem key={i}>
-                    <div
-                      onClick={() => router.push(val.routerPath)}
-                      className={
-                        pathname.split("/")[1] === val.routerPath?.split("/")[1]
-                          ? // val.routerPath === pathname.split('/')[1]
-                            "ui-active"
-                          : "inactive-mobile-menu"
-                      }
-                    >
-                      {val.name}
-                    </div>
-                  </MenuItem>
-                ))}
-              </SubMenu>
-            ))}
-          </SubMenu> */}
-          {/* End Pages Property */}
-          {/* 
-          <SubMenu
-            label="Blog"
-            className={
-              blog.some(
-                (page) =>
-                  page.routerPath?.split("/")[1] === pathname.split("/")[1]
-                // page.routerPath?.split('/')[1] + "/[id]" === pathname.split('/')[1]
-              )
-                ? "parent-menu-active"
-                : "inactive-mobile-menu"
-            }
-          >
-            {blog.map((val, i) => (
-              <MenuItem key={i}>
-                <div
-                  onClick={() => router.push(val.routerPath)}
-                  className={
-                    pathname?.split("/")[1] === val.routerPath?.split("/")[1]
-                      ? // val.routerPath + "/[id]" === pathname.split('/')[1]
-                        "ui-active"
-                      : "inactive-mobile-menu"
-                  }
-                >
-                  {val.name}
-                </div>
-              </MenuItem>
-            ))}
-          </SubMenu> */}
-          {/* End pages Blog */}
-
-          {/* <SubMenu
-            label="Pages"
-            className={
-              pages.some(
-                (page) =>
-                  page.routerPath?.split("/")[1] === pathname.split("/")[1]
-              )
-                ? "parent-menu-active"
-                : "inactive-mobile-menu"
-            }
-          >
-            {pages.map((val, i) => (
-              <MenuItem key={i}>
-                <div
-                  onClick={() => router.push(val.routerPath)}
-                  className={
-                    pathname?.split("/")[1] === val.routerPath?.split("/")[1]
-                      ? "ui-active"
-                      : "inactive-mobile-menu"
-                  }
-                >
-                  {val.name}
-                </div>
-              </MenuItem>
-            ))}
-          </SubMenu> */}
-          {/* End pages Pages */}
-
-          {/* <MenuItem>
-            <div
-              onClick={() => router.push("/contact")}
-              className={
-                pathname === "/contact" ? "ui-active" : "inactive-mobile-menu"
-              }
-            >
-              Contact
-            </div>
-          </MenuItem>
-
           <MenuItem>
-            <div
-              onClick={() => router.push("/login")}
-              className={
-                pathname === "/login" ? "ui-active" : "inactive-mobile-menu"
-              }
+            <Button
+              style={{
+                backgroundColor: "#3b82f6",
+                color: "white",
+                borderColor: "#3b82f6",
+              }}
+              onClick={() => {
+                if (isConnected) {
+                  logout();
+                } else {
+                  setShowAbstraxion(true);
+                }
+              }}
             >
-              <span className="flaticon-user"></span> Login
-            </div>
+              {isConnected ? "LOG OUT" : "CONNECT WALLET"}
+            </Button>
           </MenuItem>
-
-          <MenuItem>
-            <div
-              onClick={() => router.push("/register")}
-              className={
-                pathname === "/register" ? "ui-active" : "inactive-mobile-menu"
-              }
-            >
-              <span className="flaticon-edit"></span> Register
-            </div>
-          </MenuItem> */}
+          {/* Wallet Modal */}
+          <Abstraxion
+            onClose={() => {
+              setShowAbstraxion(false);
+            }}
+          />
         </Menu>
       </div>
-      {/* </Sidebar> */}
-
-      {/* <Link
-        href="/create-listing"
-        className="btn btn-block btn-lg btn-thm circle"
-        style={{ width: "90%", margin: "0px auto" }}
-      >
-        <span className="flaticon-plus"></span> Create Listing
-      </Link> */}
     </>
   );
 };

@@ -1,12 +1,17 @@
 const Social = () => {
   const socialContent = [
     { id: 2, liveLink: "https://x.com/FractItLabs", icon: "fa-twitter" },
-    { id: 3, liveLink: " https://blog.fractit.com/", icon: "fa-medium" }, // Medium link corrected
+    { id: 3, liveLink: "https://blog.fractit.com/", icon: "fa-medium" },
     {
-      id: 5,
+      id: 4,
       liveLink: "https://discord.com/invite/dJDKZTqMHq",
-      icon: "fa-discord",
-    }, // Discord link corrected
+      icon: "./assets/images/discord.png",
+    },
+    // {
+    //   id: 5,
+    //   liveLink: "https://discord.com/invite/dJDKZTqMHq",
+    //   icon: "fa-discord",
+    // },
   ];
   return (
     <>
