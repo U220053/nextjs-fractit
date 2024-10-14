@@ -115,7 +115,7 @@ const HeaderMenuContent = ({ float = "" }) => {
       className="ace-responsive-menu text-end d-lg-block d-none"
       data-menu-style="horizontal"
     >
-      <li className="last">
+      {/* <li className="last">
         <Link
           href="https://fractit.com/"
           // className={pathname === "/reit" ? "ui-active" : undefined}
@@ -124,7 +124,7 @@ const HeaderMenuContent = ({ float = "" }) => {
         >
           Home
         </Link>
-      </li>
+      </li> */}
       <li className="last">
         <Link href="/#" className={pathname === "/" ? "ui-active" : undefined}>
           Properties
@@ -140,8 +140,8 @@ const HeaderMenuContent = ({ float = "" }) => {
       </li>
       <li className="last">
         <Link
-          href="/landing"
-          className={pathname === "/landing" ? "ui-active" : undefined}
+          href="/lending"
+          className={pathname === "/lending" ? "ui-active" : undefined}
         >
           Lending
         </Link>
@@ -165,7 +165,7 @@ const HeaderMenuContent = ({ float = "" }) => {
           }}
           onClick={() => setShowAbstraxion(true)}
         >
-          {isConnected ? "LOG OUT" : "CONNECT WALLET"}
+          {isConnected ? "LOG OUT" : "LOG IN"}
         </Button>
       </li>
 

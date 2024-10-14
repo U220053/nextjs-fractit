@@ -32,6 +32,7 @@ const ContactWithAgent = ({ id }) => {
   const [usdcBalance, setUsdcBalance] = useState("0");
   const [mintNft, setMintNft] = useState(undefined);
   const [inputError, setInputError] = useState("");
+  // const [transactionHash, setTransactionHash] = useState("");
   const [transactionHash, setTransactionHash] = useState("");
 
   useEffect(() => {
@@ -271,7 +272,7 @@ const ContactWithAgent = ({ id }) => {
                   ? "Successful"
                   : loading
                   ? "MINTING..."
-                  : "MINT 1 TOKEN"}
+                  : "BUY 1 TOKEN"}
               </Button>
             ) : (
               <Button
@@ -287,28 +288,39 @@ const ContactWithAgent = ({ id }) => {
               </Button>
             )
           ) : (
-            <Button
-              style={{
-                backgroundColor: "#3b82f6",
-                color: "white",
-                borderColor: "#3b82f6",
-              }}
-              className="btn btn-block btn-thm w-100"
-              onClick={() => setShowAbstraxion(true)}
-            >
-              CONNECT WALLET
-            </Button>
+            <>
+              <Button
+                style={{
+                  backgroundColor: "#3b82f6",
+                  color: "white",
+                  borderColor: "#3b82f6",
+                }}
+                className="btn btn-block btn-thm w-100"
+                onClick={() => setShowAbstraxion(true)}
+              >
+                LOG IN
+              </Button>
+            </>
           )}
           {transactionHash && (
             <div className="mt-4">
               <p>Transaction Successful!</p>
-              <p>
+              <p
+                style={{
+                  fontWeight: "bold",
+                  color: "green",
+                }}
+              >
                 Transaction Hash:{" "}
                 <a
                   href={`https://explorer.burnt.com/xion-testnet-1/tx/${transactionHash}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="break-words"
+                  style={{
+                    fontWeight: "bold",
+                    color: "green",
+                    wordBreak: "break-all",
+                  }}
                 >
                   {transactionHash}
                 </a>
@@ -316,6 +328,10 @@ const ContactWithAgent = ({ id }) => {
             </div>
           )}
         </div>
+        <h4 className="mb30" style={{ fontWeight: "bold", color: "red" }}>
+          Disclaimer: To ensure wider token distribution, we've implemented a
+          daily mint limit.
+        </h4>
       </main>
 
       <Abstraxion

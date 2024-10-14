@@ -53,7 +53,7 @@ const MobileMenuContent = () => {
             width={100}
             height={45}
             className="nav_logo_img img-fluid mt20"
-            src="/assets/images/logo_black-blue.png"
+            src="/assets/images/Logo_black-blue.png"
             alt="header-logo.png"
           />
         </Link>
@@ -73,9 +73,9 @@ const MobileMenuContent = () => {
       {/* <Sidebar> */}
       <div style={{ maxHeight: "calc(100vh - 100px)", overflowY: "auto" }}>
         <Menu>
-          <MenuItem>
+          {/* <MenuItem>
             <a href="https://fractit.com/">Home</a>
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem>
             <div
               onClick={() => router.push("/")}
@@ -131,7 +131,7 @@ const MobileMenuContent = () => {
                 }
               }}
             >
-              {isConnected ? "LOG OUT" : "CONNECT WALLET"}
+              {isConnected ? "LOG OUT" : "LOG IN"}
             </Button>
           </MenuItem>
           {/* Wallet Modal */}
