@@ -17,18 +17,18 @@ const SidebarMenu = () => {
     { id: 2, name: "Advanced Elements", route: "/my-properties" },
     { id: 3, name: "Editors", route: "/my-properties" },
   ];
-  const reviews = [
-    { id: 1, name: "My Reviews", route: "/my-review" },
-    { id: 2, name: "Visitor Reviews", route: "/my-review" },
-  ];
+  // const reviews = [
+  //   { id: 1, name: "My Reviews", route: "/my-review" },
+  //   { id: 2, name: "Visitor Reviews", route: "/my-review" },
+  // ];
   const manageAccount = [
     {
       id: 2,
       name: "My Profile",
-      route: "/my-profile",
+      route: "/account",
       icon: "flaticon-user",
     },
-    { id: 3, name: "Logout", route: "/login", icon: "flaticon-logout" },
+    { id: 3, name: "Logout", route: "/account", icon: "flaticon-logout" },
   ];
 
   return (
@@ -108,16 +108,16 @@ const SidebarMenu = () => {
             {/* end properties */}
 
             <li
-              className={`treeview ${
-                isParentPageActive(reviews, pathname) ? "active" : ""
-              }`}
+            // className={`treeview ${
+            //   isParentPageActive(reviews, pathname) ? "active" : ""
+            // }`}
             >
-              <a data-bs-toggle="collapse" href="#review">
+              <a data-bs-toggle="collapse" href="">
                 <i className="flaticon-chat"></i>
                 <span>Reviews</span>
                 {/* <i className="fa fa-angle-down pull-right"></i> */}
               </a>
-              <ul className="treeview-menu collapse" id="review">
+              {/* <ul className="treeview-menu collapse" id="review">
                 {reviews.map((item) => (
                   <li key={item.id}>
                     <Link href={item.route}>
@@ -125,7 +125,7 @@ const SidebarMenu = () => {
                     </Link>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </li>
             {/* End Review */}
 
@@ -134,7 +134,7 @@ const SidebarMenu = () => {
                 isSinglePageActive("/my-favourites", pathname) ? "active" : ""
               }`}
             >
-              <Link href="/my-favourites">
+              <Link href="/account">
                 <i className="flaticon-magnifying-glass"></i>
                 <span> My Favorites</span>
               </Link>
