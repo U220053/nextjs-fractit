@@ -1,16 +1,15 @@
 import dynamic from "next/dynamic";
-import NotFound from "../not-found";
+import MyProperties from "@/components/dashboard/my-properties";
 
 export const metadata = {
-  title: " My Account",
+  title: "My Properties || FindHouse - Real Estate React Template",
+  description: "FindHouse - Real Estate React Template",
 };
 
 const index = () => {
   return (
     <>
-      <div>
-        <NotFound />
-      </div>
+      <MyProperties />
     </>
   );
 };

@@ -2,6 +2,7 @@ module.exports = [
   {
     id: 1,
     img: "/assets/images/property/2_.png",
+    img1: "/assets/images/property/cliff.webp",
     price: "235,000",
     lat: 40.7279707552121,
     long: -74.07152705896405,
@@ -111,6 +112,7 @@ Prime mountain location with panoramic views
   {
     id: 2,
     img: "/assets/images/property/sparkle.webp",
+    img1: "/assets/images/property/sparkle.webp",
     price: "365,000",
     type: "Apartment",
     title: "Sparkle Tower 2 - 1BR | Marina View",
@@ -213,10 +215,13 @@ Prime mountain location with panoramic views
     rentalyeild: "9.8% p.a",
     capitalappreciation: "7% p.a",
     roi: "91%",
+    cw20Address:
+      "xion1gtvfxt2nhy42hrqcz437vpeujr9dk5jf4re507qv203ud35xnwms0rwrf0",
   },
   {
     id: 3,
     img: "/assets/images/property/3_.png",
+    img1: "/assets/images/property/3_.png",
     price: "830,860",
     type: "Apartment",
     title: "JW Marriott Hotel Marina - 1BR ",
@@ -314,6 +319,7 @@ Access to premium amenities: infinity pool, spa, gym, and 24/7 security
   {
     id: 4,
     img: "/assets/images/property/4_.png",
+    img1: "/assets/images/property/4_.png",
     price: "1,362,398",
     type: "Apartment",
     title: "Fountain Views Tower 2 - 2BR",
@@ -401,6 +407,7 @@ Strong rental and capital appreciation potential
   {
     id: 5,
     img: "/assets/images/property/5_.png",
+    img1: "/assets/images/property/5_.png",
     price: "645,105",
     type: "Apartment",
     title: "Vancouver House - 1BR",
@@ -496,6 +503,7 @@ Award-winning architecture and design
   {
     id: 6,
     img: "/assets/images/myimage/toronto.jpg",
+    img1: "/assets/images/myimage/toronto.jpg",
     price: "1,298,000",
     type: "Detached House ",
     title: "Church Street House - 3BR ",

@@ -1,10 +1,11 @@
-import Header from "../../common/header/dashboard/Header";
+import Header from "@/components/common/header/DefaultHeader";
 import SidebarMenu from "../../common/header/dashboard/SidebarMenu";
 import MobileMenu from "../../common/header/MobileMenu";
 import TableData from "./TableData";
 import Filtering from "./Filtering";
 import Pagination from "./Pagination";
 import SearchBox from "./SearchBox";
+import AllStatistics from "./AllStatistics";
 
 const index = () => {
   return (
@@ -52,13 +53,20 @@ const index = () => {
 
                 <div className="col-lg-4 col-xl-4 mb10">
                   <div className="breadcrumb_content style2 mb30-991">
-                    <h2 className="breadcrumb_title">My Favorites</h2>
-                    <p>We are glad to see you again!</p>
+                    <h2
+                      className="breadcrumb_title"
+                      style={{ fontWeight: "bold", fontSize: "2rem" }}
+                    >
+                      Howdy,
+                    </h2>
+                    <p>We are glad to see you!</p>
                   </div>
                 </div>
                 {/* End .col */}
-
-                <div className="col-lg-8 col-xl-8">
+                <div className="row">
+                  <AllStatistics />
+                </div>
+                {/* <div className="col-lg-8 col-xl-8">
                   <div className="candidate_revew_select style2 text-end mb30-991">
                     <ul className="mb0">
                       <li className="list-inline-item">
@@ -66,15 +74,15 @@ const index = () => {
                           <SearchBox />
                         </div>
                       </li>
-                      {/* End li */}
+                   
 
                       <li className="list-inline-item">
                         <Filtering />
                       </li>
-                      {/* End li */}
+                    
                     </ul>
                   </div>
-                </div>
+                </div> */}
                 {/* End .col */}
 
                 <div className="col-lg-12">
@@ -85,9 +93,9 @@ const index = () => {
                       </div>
                       {/* End .table-responsive */}
 
-                      <div className="mbp_pagination">
+                      {/* <div className="mbp_pagination">
                         <Pagination />
-                      </div>
+                      </div> */}
                       {/* End .mbp_pagination */}
                     </div>
                     {/* End .property_table */}
@@ -97,13 +105,13 @@ const index = () => {
               </div>
               {/* End .row */}
 
-              <div className="row mt50">
+              {/* <div className="row mt50">
                 <div className="col-lg-12">
                   <div className="copyright-widget text-center">
                     <p>© 2020 Find House. Made with love.</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
               {/* End .row */}
             </div>
             {/* End .col */}
