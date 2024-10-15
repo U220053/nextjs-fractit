@@ -92,7 +92,7 @@ const SidebarMenu = () => {
               }`}
             >
               <a data-bs-toggle="collapse" href="">
-                <i className="flaticon-home"></i> <span>Investment</span>
+                <i className="flaticon-home"></i> <span>Investments</span>
                 {/* <i className="fa fa-angle-down pull-right"></i> */}
               </a>
               {/* <ul className="treeview-menu collapse" id="my-property">
@@ -131,11 +131,11 @@ const SidebarMenu = () => {
 
             <li
               className={`treeview ${
-                isSinglePageActive("/my-favourites", pathname) ? "active" : ""
+                isSinglePageActive("/account", pathname) ? "active" : ""
               }`}
             >
               <Link href="/account">
-                <i className="flaticon-magnifying-glass"></i>
+                <i className="flaticon-heart"></i>
                 <span> My Favorites</span>
               </Link>
             </li>
@@ -154,7 +154,7 @@ const SidebarMenu = () => {
         {/* End manage listing */}
 
         <li className="title">
-          <span>Manage Account</span>
+          <span>Coming Soon</span>
           <ul>
             {manageAccount.map((item) => (
               <li
