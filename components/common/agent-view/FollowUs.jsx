@@ -171,7 +171,7 @@ const FollowUs = ({ id }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src={twitter} alt="twitter" width={20} height={20} />
+                <Image src={twitter} alt="twitter" width={50} height={50} />
               </a>
             </li>
             <li>
@@ -180,7 +180,7 @@ const FollowUs = ({ id }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src={discord} alt="discord" width={30} height={30} />
+                <Image src={discord} alt="discord" width={60} height={60} />
               </a>
             </li>
           </ul>

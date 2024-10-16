@@ -154,6 +154,14 @@ const HeaderMenuContent = ({ float = "" }) => {
           Account
         </Link>
       </li>
+      <li className="last">
+        <Link
+          href="/faucet"
+          className={pathname === "/faucet" ? "ui-active" : undefined}
+        >
+          Faucet
+        </Link>
+      </li>
 
       {/* Wallet Connect/Account View Button */}
       <li>

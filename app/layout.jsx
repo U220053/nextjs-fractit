@@ -58,6 +58,16 @@ export default function RootLayout({ children }) {
                   },
                 ],
               },
+              {
+                address:
+                  "xion13ccaczqvafslzd2r02whrpaw0atjuufldc5twntqz6xpn8e6shssddh5yj",
+                amounts: [
+                  {
+                    denom: "uxion",
+                    amount: "500000",
+                  },
+                ],
+              },
             ],
           }}
         >

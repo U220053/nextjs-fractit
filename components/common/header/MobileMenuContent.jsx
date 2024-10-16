@@ -117,6 +117,16 @@ const MobileMenuContent = () => {
             </div>
           </MenuItem>
           <MenuItem>
+            <div
+              onClick={() => router.push("/faucet")}
+              className={
+                pathname === "/faucet" ? "ui-active" : "inactive-mobile-menu"
+              }
+            >
+              Faucet
+            </div>
+          </MenuItem>
+          <MenuItem>
             <Button
               style={{
                 backgroundColor: "#3b82f6",

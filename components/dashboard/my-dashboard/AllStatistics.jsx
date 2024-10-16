@@ -14,20 +14,20 @@ const AllStatistics = () => {
       timer: "24",
       name: "Total Views",
     },
-    {
-      id: 3,
-      blockStyle: "style3",
-      icon: "flaticon-chat",
-      timer: "12",
-      name: "Total Visitor Reviews",
-    },
-    {
-      id: 4,
-      blockStyle: "style4",
-      icon: "flaticon-heart",
-      timer: "18",
-      name: "Total Favorites",
-    },
+    // {
+    //   id: 3,
+    //   blockStyle: "style3",
+    //   icon: "flaticon-chat",
+    //   timer: "12",
+    //   name: "Total Visitor Reviews",
+    // },
+    // {
+    //   id: 4,
+    //   blockStyle: "style4",
+    //   icon: "flaticon-heart",
+    //   timer: "18",
+    //   name: "Total Favorites",
+    // },
   ];
 
   return (
