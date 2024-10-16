@@ -337,6 +337,7 @@ const Form = () => {
             flexDirection: "row",
             gap: "10px",
             marginTop: "10px",
+            marginBottom: "10px",
           }}
         >
           <Button
