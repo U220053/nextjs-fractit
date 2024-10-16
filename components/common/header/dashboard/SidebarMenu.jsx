@@ -130,9 +130,9 @@ const SidebarMenu = () => {
             {/* End Review */}
 
             <li
-              className={`treeview ${
-                isSinglePageActive("/account", pathname) ? "active" : ""
-              }`}
+            // className={`treeview ${
+            //   isSinglePageActive("/account", pathname) ? "active" : ""
+            // }`}
             >
               <Link href="/account">
                 <i className="flaticon-heart"></i>
@@ -158,9 +158,9 @@ const SidebarMenu = () => {
           <ul>
             {manageAccount.map((item) => (
               <li
-                className={
-                  isSinglePageActive(item.route, pathname) ? "active" : ""
-                }
+                // className={
+                //   isSinglePageActive(item.route, pathname) ? "active" : ""
+                // }
                 key={item.id}
               >
                 <Link href={item.route}>

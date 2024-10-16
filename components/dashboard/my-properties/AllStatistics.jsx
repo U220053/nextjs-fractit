@@ -142,7 +142,7 @@ const AllStatistics = () => {
       id: 3,
       blockStyle: "style3",
       icon: "flaticon-chat",
-      timer: mintNft[2] || "Loading...",
+      timer: `$${mintNft[2] || "Loading..."}`,
       name: "Total Value Of Tokens",
     },
     {
