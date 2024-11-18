@@ -220,8 +220,9 @@ Prime mountain location with panoramic views
   },
   {
     id: 3,
-    img: "/assets/images/property/3_.png",
-    img1: "/assets/images/property/3_.png",
+
+    img: "/assets/images/property/jw.webp",
+    img1: "/assets/images/property/jw.webp",
     price: "830,860",
     type: "Apartment",
     title: "JW Marriott Hotel Marina - 1BR ",
@@ -406,8 +407,8 @@ Strong rental and capital appreciation potential
   },
   {
     id: 5,
-    img: "/assets/images/property/5_.png",
-    img1: "/assets/images/property/5_.png",
+    img: "/assets/images/property/3_.png",
+    img1: "/assets/images/property/3_.png",
     price: "645,105",
     type: "Apartment",
     title: "Vancouver House - 1BR",

@@ -28,22 +28,15 @@ const ContactWithAgent = ({ id }) => {
   const [isConnected, setIsConnected] = useState(false);
   const [loading, setLoading] = useState(false);
   const [executeResult, setExecuteResult] = useState(undefined);
-  const [mintAmount, setMintAmount] = useState("1");
+  const [mintAmount, setMintAmount] = useState("");
   const [usdcBalance, setUsdcBalance] = useState("0");
   const [mintNft, setMintNft] = useState(undefined);
+  const [mintNftprop3, setMintNftprop3] = useState(undefined);
   const [inputError, setInputError] = useState("");
   // const [transactionHash, setTransactionHash] = useState("");
   const [transactionHash, setTransactionHash] = useState("");
 
   useEffect(() => {
-    // if (account && account.bech32Address != "") {
-    //   setIsConnected(true);
-    //   checkUsdcBalance();
-    //   handleNumTokens();
-    // } else {
-    //   setIsConnected(false);
-    //   setUsdcBalance("0");
-    // }
     if (account && account.bech32Address != "") {
       setIsConnected(true);
       checkUsdcBalance();
@@ -78,15 +71,21 @@ const ContactWithAgent = ({ id }) => {
         token_info: {},
       };
       console.log("nitu");
-      const balanceResponse = await client.queryContractSmart(
+      const balanceResponse1 = await client.queryContractSmart(
         cw20Address,
+        balanceQueryMsg
+      );
+      const balanceResponse2 = await client.queryContractSmart(
+        "xion1nppxz2m32shx63qn9yjfwzrg7wkljuhuf6gwuypl7k577u7la75sgxyfrx",
         balanceQueryMsg
       );
       // console.log("balanceResponse", balanceResponse);
       // setMintNft(balanceResponse.total_supply / 1000000);
       // console.log("balanceResponse", balanceResponse.total_supply);
-      const totalSupply = Math.floor(balanceResponse.total_supply / 1000000);
+      const totalSupply = Math.floor(balanceResponse1.total_supply / 1000000);
+      const totalSupply2 = Math.floor(balanceResponse2.total_supply / 1000000);
       setMintNft(totalSupply);
+      setMintNftprop3(totalSupply2);
     } catch (error) {
       console.error("Query error:", error);
     }
@@ -108,6 +107,49 @@ const ContactWithAgent = ({ id }) => {
   };
 
   const handleMint = async () => {
+    console.log("handle mint clicked");
+    // if (inputError || mintAmount === "") {
+    //   toast.error("Please enter a valid amount before minting.");
+    //   return;
+    // }
+
+    setLoading(true);
+
+    try {
+      if (!client || !account) {
+        throw new Error("Wallet not connected");
+      }
+
+      const amount = (parseInt(1) * 1000000).toString();
+      const mintMsg = { deposit: {} };
+
+      const mintRes = await client.execute(
+        account.bech32Address,
+        mintContractAddress,
+        mintMsg,
+        {
+          amount: [{ amount: "0", denom: "uxion" }],
+          gas: "500000",
+        },
+        "",
+        coins(amount, ibcDenom)
+      );
+
+      setExecuteResult(mintRes);
+      toast.success("Token minted successfully!");
+      setTransactionHash(mintRes.transactionHash);
+      await checkUsdcBalance();
+      await handleNumTokens();
+      // checkUsdcBalance();
+    } catch (error) {
+      console.error("Minting error:", error);
+      toast.error(`Minting failed`);
+    } finally {
+      setLoading(false);
+    }
+  };
+  const handleMint_marriot = async () => {
+    console.log("clcikced");
     if (inputError || mintAmount === "") {
       toast.error("Please enter a valid amount before minting.");
       return;
@@ -120,12 +162,13 @@ const ContactWithAgent = ({ id }) => {
         throw new Error("Wallet not connected");
       }
 
-      const amount = parseInt(1) * 1000000;
+      const amount = parseInt(mintAmount) * 1000000;
+      console.log("amount", amount);
       const mintMsg = { deposit: {} };
 
       const mintRes = await client.execute(
         account.bech32Address,
-        mintContractAddress,
+        "xion19ywxhuxrf504c8wzf7sxg3scxxyhtxld7z73lv3nzer52sv7d2ws7c7zap",
         mintMsg,
         {
           amount: [{ amount: "0", denom: "uxion" }],
@@ -167,6 +210,17 @@ const ContactWithAgent = ({ id }) => {
           </>
         ) : id == 1 ? (
           <>Token Purchased: 235/235</>
+        ) : id == 3 ? (
+          <>
+            <div>Token Symbol: FJWHM</div> <div>Token Price: 1 USDC </div>
+            <div>
+              Token Sold:{" "}
+              <span className="font-bold">
+                {mintNftprop3 !== undefined ? mintNftprop3.toString() : "0"}
+              </span>
+              /365,000
+            </div>
+          </>
         ) : (
           <>Coming Soon</>
         )}
@@ -209,55 +263,8 @@ const ContactWithAgent = ({ id }) => {
             </div>
           </div>
 
-          {/* {isConnected ? (
-            id == 2 ? (
-              <Button
-                style={{
-                  backgroundColor: "#3b82f6",
-                  color: "white",
-                  borderColor: "#3b82f6",
-                }}
-                className="btn btn-block btn-thm w-100"
-                onClick={handleMint}
-                disabled={loading || !!inputError || mintAmount === ""}
-              >
-                {id == 2
-                  ? loading
-                    ? "MINTING..."
-                    : "MINT 1 TOKEN"
-                  : loading
-                  ? "MINTING..."
-                  : "MINT"}
-             
-              </Button>
-            ) : (
-              <Button
-                style={{
-                  backgroundColor: "#3b82f6",
-                  color: "white",
-                  cursor: "not-allowed",
-                }}
-                className="btn btn-block btn-thm w-100"
-                disabled
-              >
-                COMING SOON
-              </Button>
-            )
-          ) : (
-            <Button
-              style={{
-                backgroundColor: "#3b82f6",
-                color: "white",
-                borderColor: "#3b82f6",
-              }}
-              className="btn btn-block btn-thm w-100"
-              onClick={() => setShowAbstraxion(true)}
-            >
-              CONNECT WALLET
-            </Button>
-          )} */}
           {isConnected ? (
-            id == 2 ? (
+            id == 2 || id == 3 ? (
               <Button
                 style={{
                   backgroundColor: "#3b82f6",
@@ -265,24 +272,32 @@ const ContactWithAgent = ({ id }) => {
                   borderColor: "#3b82f6",
                 }}
                 className="btn btn-block btn-thm w-100"
-                onClick={handleMint}
-                disabled={loading || !!inputError || mintAmount === ""}
+                // onClick={handleMint_marriot}
+                onClick={id == 2 ? handleMint : handleMint_marriot}
+                disabled={
+                  loading || !!inputError || (id == 3 && mintAmount == "")
+                }
               >
                 {transactionHash
-                  ? "Successful"
+                  ? id == 2
+                    ? "Successful"
+                    : "Buy Again"
                   : loading
                   ? "MINTING..."
-                  : "BUY 1 TOKEN"}
+                  : id == 2
+                  ? "BUY 1 TOKEN"
+                  : "BUY TOKEN"}
               </Button>
             ) : (
               <Button
                 style={{
                   backgroundColor: "#3b82f6",
+                  borderColor: "#3b82f6",
                   color: "white",
                   cursor: "not-allowed",
                 }}
-                className="btn btn-block btn-thm w-100"
-                disabled
+                className="btn btn-block btn-thm w-100 "
+                disabled={true}
               >
                 COMING SOON
               </Button>

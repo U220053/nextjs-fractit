@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
 import { useEffect } from "react";
 import { useState } from "react";
-import InputRange from "react-input-range";
+// import InputRange from "react-input-range";
 import { useDispatch } from "react-redux";
 import { addPrice } from "../../features/properties/propertiesSlice";
 
@@ -41,13 +41,13 @@ const RangeSlider = () => {
         </div>
       </div>
 
-      <InputRange
+      {/* <InputRange
         formatLabel={(value) => ``}
         maxValue={20000}
         minValue={10000}
         value={price.value}
         onChange={(value) => handleOnChange(value)}
-      />
+      /> */}
 
       <div className="slider-styled inside-slider" id="nft-slider"></div>
     </div>

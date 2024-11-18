@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import properties from "@/data/properties";
 import twitter from "../../../public/assets/images/Twitter.svg";
 import discord from "../../../public/assets/images/Discord.svg";
+import insta from "../../../public/assets/images/insta.svg";
 
 const cw20Address =
   "xion1gtvfxt2nhy42hrqcz437vpeujr9dk5jf4re507qv203ud35xnwms0rwrf0";
@@ -181,6 +182,21 @@ const FollowUs = ({ id }) => {
                 rel="noopener noreferrer"
               >
                 <Image src={discord} alt="discord" width={60} height={60} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/FractItLabs"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={insta}
+                  alt="insta"
+                  width={60}
+                  height={60}
+                  style={{ marginTop: "-8px" }}
+                />
               </a>
             </li>
           </ul>

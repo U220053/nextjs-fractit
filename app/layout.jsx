@@ -18,6 +18,8 @@ if (typeof window !== "undefined") {
 
 export default function RootLayout({ children }) {
   const mintContractAddress = process.env.NEXT_PUBLIC_MINT_CONTRACT_ADDRESS;
+  const mintContractAddress2 = process.env.NEXT_PUBLIC_MINT_CONTRACT_ADDRESS2;
+
   const ibcDenom = process.env.NEXT_PUBLIC_IBC_DENOM;
   return (
     <html lang="en">
@@ -65,6 +67,18 @@ export default function RootLayout({ children }) {
                   {
                     denom: "uxion",
                     amount: "500000",
+                  },
+                ],
+              },
+              {
+                address:
+                  "xion19ywxhuxrf504c8wzf7sxg3scxxyhtxld7z73lv3nzer52sv7d2ws7c7zap" ||
+                  "",
+                amounts: [
+                  {
+                    denom:
+                      "ibc/57097251ED81A232CE3C9D899E7C8096D6D87EF84BA203E12E424AA4C9B57A64",
+                    amount: "10000000",
                   },
                 ],
               },
