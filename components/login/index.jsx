@@ -67,25 +67,6 @@ const Faucet = () => {
                 </div>
                 {/* End .col */}
 
-                {/* <div className="col-lg-8 col-xl-8">
-                  <div className="candidate_revew_select style2 text-end mb30-991">
-                    <ul className="mb0">
-                      <li className="list-inline-item">
-                        <div className="candidate_revew_search_box course fn-520">
-                          <SearchBox />
-                        </div>
-                      </li>
-                   
-
-                      <li className="list-inline-item">
-                        <Filtering />
-                      </li>
-                    
-                    </ul>
-                  </div>
-                </div> */}
-                {/* End .col */}
-
                 <div className="col-lg-12">
                   <div className="my_dashboard_review mb40">
                     <div className="property_table">

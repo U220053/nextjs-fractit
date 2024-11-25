@@ -15,6 +15,7 @@ import properties from "@/data/properties";
 // Mapping of property IDs to their respective CW20 addresses
 const propertyCw20Addresses = {
   2: "xion1gtvfxt2nhy42hrqcz437vpeujr9dk5jf4re507qv203ud35xnwms0rwrf0",
+  3: "xion1nppxz2m32shx63qn9yjfwzrg7wkljuhuf6gwuypl7k577u7la75sgxyfrx",
   // Add more properties and their CW20 addresses here if needed
 };
 

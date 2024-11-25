@@ -35,6 +35,8 @@ const ContactWithAgent = ({ id }) => {
   const [inputError, setInputError] = useState("");
   // const [transactionHash, setTransactionHash] = useState("");
   const [transactionHash, setTransactionHash] = useState("");
+  const [transactionState, setTransactionState] = useState(""); // Tracks transaction state
+  const [isMinting, setIsMinting] = useState(false);
 
   useEffect(() => {
     if (account && account.bech32Address != "") {
@@ -183,12 +185,24 @@ const ContactWithAgent = ({ id }) => {
       setTransactionHash(mintRes.transactionHash);
       await checkUsdcBalance();
       await handleNumTokens();
-      // checkUsdcBalance();
     } catch (error) {
       console.error("Minting error:", error);
       toast.error(`Minting failed`);
     } finally {
       setLoading(false);
+    }
+  };
+  const handleMintAgain = async () => {
+    setIsMinting(true); // Set minting state to true
+    setTransactionState(""); // Reset transaction state
+    try {
+      await handleMint_marriot(); // Call your minting function
+      setTransactionState("success"); // Set transaction to successful after completion
+    } catch (error) {
+      console.error("Minting failed:", error);
+      setTransactionState("failed"); // Handle error (optional)
+    } finally {
+      setIsMinting(false); // Reset minting state after completion
     }
   };
 
@@ -273,18 +287,29 @@ const ContactWithAgent = ({ id }) => {
                 }}
                 className="btn btn-block btn-thm w-100"
                 // onClick={handleMint_marriot}
-                onClick={id == 2 ? handleMint : handleMint_marriot}
+                onClick={id == 2 ? handleMint : handleMintAgain}
                 disabled={
                   loading || !!inputError || (id == 3 && mintAmount == "")
                 }
               >
-                {transactionHash
+                {/* {transactionHash
                   ? id == 2
                     ? "Successful"
                     : "Buy Again"
                   : loading
                   ? "MINTING..."
                   : id == 2
+                  ? "BUY 1 TOKEN"
+                  : "BUY TOKEN"} */}
+                {transactionState === "success"
+                  ? id === 2
+                    ? "Successful"
+                    : isMinting
+                    ? "Minting..."
+                    : "Buy Again"
+                  : loading
+                  ? "MINTING..."
+                  : id === 2
                   ? "BUY 1 TOKEN"
                   : "BUY TOKEN"}
               </Button>

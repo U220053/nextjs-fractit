@@ -69,29 +69,8 @@ const SidebarMenu = () => {
                 <span> Faucet </span>
               </Link>
             </li>
-            {/* <li
-              className={`treeview ${
-                isSinglePageActive("/create-listing", pathname) ? "active" : ""
-              }`}
-            >
-              <Link href="/create-listing">
-                <i className="flaticon-plus"></i>
-                <span> Create Listing</span>
-              </Link>
-            </li> */}
-            {/* <li
-              className={`treeview ${
-                isSinglePageActive("/my-message", pathname) ? "active" : ""
-              }`}
-            >
-              <Link href="/my-message">
-                <i className="flaticon-envelope"></i>
-                <span> Message</span>
-              </Link>
-            </li> */}
           </ul>
         </li>
-        {/* End Main */}
 
         <li className="title">
           <span>Coming Soon</span>

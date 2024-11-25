@@ -65,6 +65,7 @@ import properties from "@/data/properties";
 // Mapping of property IDs to their respective CW20 addresses
 const propertyCw20Addresses = {
   2: "xion1gtvfxt2nhy42hrqcz437vpeujr9dk5jf4re507qv203ud35xnwms0rwrf0",
+  3: "xion1nppxz2m32shx63qn9yjfwzrg7wkljuhuf6gwuypl7k577u7la75sgxyfrx",
   // Add more properties and their CW20 addresses here if needed
 };
 
@@ -135,14 +136,14 @@ const AllStatistics = () => {
       id: 2,
       blockStyle: "style2",
       icon: "flaticon-view",
-      timer: mintNft[2] || "Loading...",
+      timer: mintNft[2] + mintNft[3] || "Loading...",
       name: "Total Tokens",
     },
     {
       id: 3,
       blockStyle: "style3",
       icon: "flaticon-chat",
-      timer: `$${mintNft[2] || "Loading..."}`,
+      timer: `$${mintNft[2] + mintNft[3] || "Loading..."}`,
       name: "Total Value Of Tokens",
     },
     {
