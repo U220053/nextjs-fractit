@@ -18,6 +18,8 @@ import insta from "../../../public/assets/images/insta.svg";
 
 const cw20Address =
   "xion1gtvfxt2nhy42hrqcz437vpeujr9dk5jf4re507qv203ud35xnwms0rwrf0";
+const GRANTER_ADDRESS =
+  "xion12wsk5fuflknrnf57743f30s5ypml6tfrfukzg3qemp4u0chgeamspgfwv2";
 const mintContractAddress = process.env.NEXT_PUBLIC_MINT_CONTRACT_ADDRESS ?? "";
 const feeAmount = process.env.NEXT_PUBLIC_FEE_AMOUNT || "0";
 const feeDenom = process.env.NEXT_PUBLIC_FEE_DENOM || "uxion";
@@ -133,6 +135,7 @@ const FollowUs = ({ id }) => {
         {
           amount: [{ amount: "0", denom: "uxion" }],
           gas: "500000",
+          granter: GRANTER_ADDRESS,
         },
         "",
         coins(amount, ibcDenom)

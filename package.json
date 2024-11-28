@@ -10,7 +10,7 @@
     "export": "next export"
   },
   "dependencies": {
-    "@burnt-labs/abstraxion": "^1.0.0-alpha.50",
+    "@burnt-labs/abstraxion": "^1.0.0-alpha.52",
     "@faker-js/faker": "^8.1.0",
     "@reduxjs/toolkit": "^1.9.6",
     "bootstrap": "^5.2.1",

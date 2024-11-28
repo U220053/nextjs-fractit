@@ -17,6 +17,8 @@ import Images from "next/image";
 
 const claimContractAddress =
   "xion13ccaczqvafslzd2r02whrpaw0atjuufldc5twntqz6xpn8e6shssddh5yj"; // Ensure this is defined
+const GRANTER_ADDRESS =
+  "xion12wsk5fuflknrnf57743f30s5ypml6tfrfukzg3qemp4u0chgeamspgfwv2";
 const feeDenom = process.env.NEXT_PUBLIC_FEE_DENOM || "uxion";
 const gasLimit = process.env.NEXT_PUBLIC_GAS_LIMIT || "500000";
 const ibcDenom = process.env.NEXT_PUBLIC_IBC_DENOM ?? "";
@@ -109,6 +111,7 @@ const Form = () => {
         {
           amount: [{ amount: "0", denom: "uxion" }],
           gas: "500000",
+          granter: GRANTER_ADDRESS,
         }
       );
 
