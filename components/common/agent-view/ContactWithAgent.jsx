@@ -17,7 +17,6 @@ const cw20Address =
   "xion1gtvfxt2nhy42hrqcz437vpeujr9dk5jf4re507qv203ud35xnwms0rwrf0";
 const GRANTER_ADDRESS =
   "xion1h82c0efsxxq4pgua754u6xepfu6avglup20fl834gc2ah0ptgn5s2zffe9";
-// "xion12wsk5fuflknrnf57743f30s5ypml6tfrfukzg3qemp4u0chgeamspgfwv2";
 const mintContractAddress = process.env.NEXT_PUBLIC_MINT_CONTRACT_ADDRESS ?? "";
 const feeAmount = process.env.NEXT_PUBLIC_FEE_AMOUNT || "0";
 const feeDenom = process.env.NEXT_PUBLIC_FEE_DENOM || "uxion";
@@ -36,7 +35,6 @@ const ContactWithAgent = ({ id }) => {
   const [mintNft, setMintNft] = useState(undefined);
   const [mintNftprop3, setMintNftprop3] = useState(undefined);
   const [inputError, setInputError] = useState("");
-  // const [transactionHash, setTransactionHash] = useState("");
   const [transactionHash, setTransactionHash] = useState("");
   const [transactionState, setTransactionState] = useState(""); // Tracks transaction state
   const [isMinting, setIsMinting] = useState(false);
@@ -113,10 +111,6 @@ const ContactWithAgent = ({ id }) => {
 
   const handleMint = async () => {
     console.log("handle mint clicked");
-    // if (inputError || mintAmount === "") {
-    //   toast.error("Please enter a valid amount before minting.");
-    //   return;
-    // }
 
     setLoading(true);
 
@@ -297,15 +291,6 @@ const ContactWithAgent = ({ id }) => {
                   loading || !!inputError || (id == 3 && mintAmount == "")
                 }
               >
-                {/* {transactionHash
-                  ? id == 2
-                    ? "Successful"
-                    : "Buy Again"
-                  : loading
-                  ? "MINTING..."
-                  : id == 2
-                  ? "BUY 1 TOKEN"
-                  : "BUY TOKEN"} */}
                 {transactionState === "success"
                   ? id == 2
                     ? "Successful"
